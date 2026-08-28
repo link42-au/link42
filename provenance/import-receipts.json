@@ -333,7 +333,7 @@
       "sourceBlobSha1": "3f9c68d7d6199bd5c887d9a57afcbe1773600e7e",
       "sourceSha256": "73f92bf66f95873f4e207e9633814158710fad9b07e195e54d96d6253955deea",
       "destinationPath": "src/lib/components/SiteFooter.svelte",
-      "destinationSha256": "463a0a7789b77a8e8c53e76a6df2fcf559f0b4a6a3be16e615d22b2e6dcaaa7a",
+      "destinationSha256": "548dd62760844fcaa7e4bd0bc5c31013a5979bf2430f361958716b2bb2c258c5",
       "mode": "adapted"
     },
     {
@@ -342,7 +342,7 @@
       "sourceBlobSha1": "1b55fa82c2b45bb642f2133652dac677408dce28",
       "sourceSha256": "24c4311b1376191cab4a7b29015fcb70fc616189ca1d7b7db50f9c69978606b3",
       "destinationPath": "src/lib/components/SiteHeader.svelte",
-      "destinationSha256": "e4385a192b605090cae0b0a6007a4192f7bc1d7428d16b2ce148f66037062b6e",
+      "destinationSha256": "2fd25467450d9240d571627512b4b4e6a14c27196895107bff0f37744d92720c",
       "mode": "adapted"
     },
     {

@@ -1,8 +1,32 @@
 # Link42
 
-This repository is the independent, public source for the Link42 company website at [link42.app](https://link42.app). The website is being separated from Link42's private platform monorepo so that its public source, content provenance, licensing boundaries, and release history can be reviewed without exposing private services or operational configuration.
+This repository is the independent, public source for the live Link42 company website at [link42.app](https://link42.app). Its public source, content provenance, licensing boundaries, and release history can be reviewed without exposing private services or operational configuration.
 
-The repository contains the public-only website shell and the publication safeguards used to keep it independent of the private platform. Work is recorded in small, tested features in [PLAN.md](PLAN.md). The repository is public and produces a GitHub Pages-compatible artifact, but it is not the canonical production deployment until the separately controlled Pages, custom-domain, DNS, and live-verification gates are complete.
+The repository contains the public-only website and the publication safeguards used to keep it independent of the private platform. Work is recorded in small, tested features in [PLAN.md](PLAN.md).
+
+## Hosting and technology
+
+The source, issue tracker, and release history are hosted on GitHub under the
+[`link42-au`](https://github.com/link42-au) organisation. The site is written in
+TypeScript and Svelte, statically generated with SvelteKit and
+`@sveltejs/adapter-static`, and managed with pnpm. Geist fonts are vendored in
+the repository so the deployed site does not depend on a font CDN.
+
+GitHub Actions runs the same verification described below and publishes the
+static artifact to GitHub Pages. Pages serves the production custom domain at
+[`link42.app`](https://link42.app). Browser checks use Playwright and axe-core;
+the source, build, routes, links, accessibility, licences, dependencies, and
+public-release boundary are checked before deployment.
+
+## Bugs, suggestions, and security
+
+- [Report a website bug](https://github.com/link42-au/link42/issues/new?template=bug_report.yml) with the affected page, steps to reproduce it, and browser or device details.
+- [Suggest an improvement](https://github.com/link42-au/link42/issues/new?template=feature_request.yml) with the problem to solve and the outcome you would find useful.
+- For a security vulnerability, use GitHub's private [Report a vulnerability](https://github.com/link42-au/link42/security/advisories/new) form. Do not disclose vulnerability details in a public issue.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a code or content
+change. General discussion and existing reports are in the
+[issue tracker](https://github.com/link42-au/link42/issues).
 
 ## Development
 

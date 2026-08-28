@@ -5,6 +5,7 @@ export const PRERENDER_ENTRIES = [
   "/about",
   "/changelog",
   "/licence",
+  "/open-source",
   "/learn",
   "/learn/frameworks",
   "/learn/frameworks/ism",

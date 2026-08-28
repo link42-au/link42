@@ -8,6 +8,7 @@ const morePages = [
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Changelog", href: "/changelog" },
+  { label: "Open source", href: "/open-source" },
   { label: "Licence", href: "/licence" },
 ];
 

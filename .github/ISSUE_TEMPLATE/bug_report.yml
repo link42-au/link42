@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a reproducible problem with the Link42 website
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Link42. Do not include vulnerability details, secrets, personal information, or other sensitive data here. Report security vulnerabilities privately through the repository Security tab.
+  - type: input
+    id: page
+    attributes:
+      label: Affected page
+      description: Which public URL or page is affected?
+      placeholder: https://link42.app/...
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Give the smallest reliable sequence that demonstrates the problem.
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen instead?
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser, device, and assistive technology
+      description: Include versions where relevant. Write "Not applicable" for content-only problems.
+      placeholder: Firefox 128 on macOS 15; VoiceOver enabled
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Public-report confirmation
+      options:
+        - label: I have searched existing issues and this report contains no sensitive or private information.
+          required: true

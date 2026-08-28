@@ -1,0 +1,45 @@
+name: Improvement suggestion
+description: Suggest a useful change to the Link42 website or public content
+title: "[Suggestion]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement. Please describe the problem and useful outcome rather than only a preferred implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What is difficult, missing, unclear, or worth improving, and who does it affect?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Useful outcome
+      description: What should a successful change let people understand or do?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggested approach
+      description: Describe an approach if you have one. This is optional.
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Note any workarounds or alternatives you have tried. This is optional.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Public-report confirmation
+      options:
+        - label: I have searched existing issues and this suggestion contains no sensitive or private information.
+          required: true
