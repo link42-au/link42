@@ -12,6 +12,8 @@ The Learn corpus receipt batch covers the schema README and all 14 canonical Mar
 
 The Blog receipt batch covers the sole pinned Markdown article as a byte-identical `verbatim` file. The parser, server loads, Blog index, article route, RSS handler, homepage integration, and source tests are recorded as `adapted-input` because the public repository strengthens metadata and URL validation, fails closed on unsupported corpus entries, preserves the clean public homepage, and adds destination accessibility coverage. Browser tests are clean destination-authored verification and therefore have no private-source receipt.
 
+The company-page receipt batch records the pinned home, About, Changelog, and Licence pages as `adapted-input`. Their public destination implementations retain the established visual voice while removing stale product status, private architecture, excluded-route links, unsupported authorship claims, and the former proprietary-code statement. The destination pages instead publish the approved website, editorial, brand, and third-party licensing boundaries. Their focused source and browser tests are clean destination-authored verification and therefore have no private-source receipts.
+
 Before importing a batch, pass every proposed source-relative path to:
 
 ```sh

@@ -124,6 +124,24 @@
       "destinationPaths": ["src/routes/+page.svelte"]
     },
     {
+      "sourcePath": "src/routes/about/+page.svelte",
+      "sourceSha256": "7e056c832f376f7ba1bc704a8b920db1aa61edf925b0286aabbd5e6c759b8fdf",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/about/+page.svelte"]
+    },
+    {
+      "sourcePath": "src/routes/changelog/+page.svelte",
+      "sourceSha256": "9ba4ff3c0245e1039d397fcadf9068b1675b42c8505c70c7bbc731026184e9d4",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/changelog/+page.svelte"]
+    },
+    {
+      "sourcePath": "src/routes/licence/+page.svelte",
+      "sourceSha256": "b6d7794ef715d28f1dd2e74b12c64a7349abdfc405bafe3f6d9ebaccd194e96f",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/licence/+page.svelte"]
+    },
+    {
       "sourcePath": "src/routes/blog/+page.server.ts",
       "sourceSha256": "038ac909c56fb5e805049efa4ed0c0bd8074c431230aca34a67e5a75b3f0c7c4",
       "mode": "adapted-input",

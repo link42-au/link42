@@ -12,9 +12,9 @@ test("shell is responsive, local-only and accessible", async ({ page }, testInfo
 
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
-  await expect(page.getByRole("heading", { name: /Practical security/ })).toBeVisible();
+  await expect(page.getByRole("heading", { name: /Security tooling that starts useful/ })).toBeVisible();
   await expect(page.getByRole("link", { name: "Link42 home" })).toBeVisible();
-  await expect(page.getByRole("link", { name: /Explore Rule1/ })).toHaveAttribute(
+  await expect(page.getByRole("link", { name: /Open Rule1/ }).first()).toHaveAttribute(
     "href",
     "https://rule1.link42.app",
   );
