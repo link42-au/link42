@@ -30,7 +30,7 @@ let { children } = $props();
 <style>
   .page { display: flex; flex-direction: column; min-height: 100vh; }
   .site-nav { background: var(--bg); border-bottom: 1px solid var(--border); }
-  .site-nav-inner { display: flex; justify-content: center; gap: 24px; max-width: 1200px; padding: 0 24px; margin: 0 auto; }
+  .site-nav-inner { display: flex; justify-content: flex-start; gap: 24px; padding: 0 20px; }
   .site-nav a { padding: 10px 0; color: var(--text-mid); font-size: 13px; text-decoration: none; border-bottom: 2px solid transparent; }
   .site-nav a:hover { color: var(--text); }
   .site-nav a.active { color: var(--text); font-weight: 600; border-bottom-color: var(--text); }
