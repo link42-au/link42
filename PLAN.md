@@ -1,8 +1,8 @@
 # Link42 Website Plan
 
-Status: Proposed - awaiting sign-off
+Status: In Progress
 Source baseline: `wan0net/link42@aaa140cdd753d6576f0a2bf3292b31518b88fbcc`
-Destination: `link42-au/website`
+Destination: `link42-au/link42`
 Production domain: <https://link42.app>
 
 ## Project Info
@@ -112,7 +112,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 
 | # | Feature | Description | Depends On | Status |
 |---|---|---|---|---|
-| 1 | Clean repository and publication policy | Add README, SECURITY, CONTRIBUTING, licences, trademark notice, third-party notices, source provenance, clean package and configuration files, and the fail-closed source allow-list. | - | todo |
+| 1 | Clean repository and publication policy | Add README, SECURITY, CONTRIBUTING, licences, trademark notice, third-party notices, source provenance, clean package and configuration files, and the fail-closed source allow-list. | - | done |
 | 2 | Public-only site shell | Port tokens and required UI locally; implement theme handling, public navigation, footer, responsive shell, and a no-auth layout. | 1 | todo |
 | 3 | Learn corpus | Import 14 canonical Learn Markdown pages and the deterministic generator; regenerate all 14 routes and preserve all 112 sections, URLs, voices, metadata, and review labels. | 2 | todo |
 | 4 | Blog and RSS | Import strict Markdown parsing, article routes, homepage latest-article integration, and RSS with safe rendering and deterministic ordering. | 2 | todo |
@@ -120,7 +120,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 | 6 | Verification and CI | Add one-command verification, route and link tests, Playwright and Axe checks, secret and privacy scans, dependency audit, deterministic generation checks, and public-safe hosted CI. | 3, 4, 5 | todo |
 | 7 | Public release | Scan the export, staged tree, full independent history, and a fresh clone; require hosted CI success and ruleset review before changing repository visibility to public. | 6 | todo |
 | 8 | Staging deployment | Deploy the exact public commit to a non-production target without copying private deployment configuration; verify routes, assets, RSS, themes, mobile layout, accessibility, and exclusions. | 7 | todo |
-| 9 | Explicit production cutover | After separate approval, change only the `link42.app` web component's source to `link42-au/website`; preserve private API and product components, verify active revision, TLS, and content, then disable the old website deployment trigger. | 8 | todo |
+| 9 | Explicit production cutover | After separate approval, change only the `link42.app` web component's source to `link42-au/link42`; preserve private API and product components, verify active revision, TLS, and content, then disable the old website deployment trigger. | 8 | todo |
 
 One completed feature equals one tested commit and push. Do not start the next feature with uncommitted work.
 
@@ -159,7 +159,7 @@ pnpm verify
 - No public deployment specification, credential, private app identifier, or DNS mutation script is copied.
 - Record the previous website source revision before cutover.
 - On failure, restore the prior source revision and verify the previous production page.
-- Mark `link42-au/website` canonical only after the live deployment is verified.
+- Mark `link42-au/link42` canonical only after the live deployment is verified.
 - Keep website links pointed at the durable `https://rule1.link42.app` product URL, not either GitHub Pages owner URL. Coordinate production launch with the separate Rule1 organisation Pages and custom-domain cutover.
 
 ## Known Risks
@@ -176,8 +176,8 @@ pnpm verify
 
 | ID | Dependency | Blocks | Status |
 |---|---|---|---|
-| D1 | Confirm the exact copyright holder named in notices; repository ownership does not determine legal ownership. | 1, 7 | open |
-| D2 | Approve Playwright and Axe development dependencies. | 6 | open |
-| D3 | Choose locally vendored Geist fonts or the system-font fallback. | 2 | open |
-| D4 | Confirm DigitalOcean can source the public web component from `link42-au/website` while private components remain sourced from `wan0net/link42`. | 8, 9 | open |
+| D1 | Confirm the exact copyright holder named in notices; repository ownership does not determine legal ownership. **Decision:** Iain Dickson. | 1, 7 | resolved |
+| D2 | Approve Playwright and Axe development dependencies. **Decision:** approved for the verification feature. | 6 | resolved |
+| D3 | Choose locally vendored Geist fonts or the system-font fallback. **Decision:** locally vendored Geist assets with provenance, checksums, and their original licence. | 2 | resolved |
+| D4 | Confirm DigitalOcean can source the public web component from `link42-au/link42` while private components remain sourced from `wan0net/link42`. | 8, 9 | open |
 | D5 | Complete and verify the separate Rule1 Pages and `rule1.link42.app` cutover. | 9 | open |

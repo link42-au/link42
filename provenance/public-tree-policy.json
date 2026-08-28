@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "allowedPaths": [
+    ".gitignore",
+    ".node-version",
+    ".npmrc",
+    "CONTRIBUTING.md",
+    "COPYRIGHT.md",
+    "LICENSE",
+    "PLAN.md",
+    "README.md",
+    "SECURITY.md",
+    "THIRD_PARTY_NOTICES.md",
+    "TRADEMARKS.md",
+    "package.json",
+    "pnpm-lock.yaml",
+    "provenance/**",
+    "scripts/**",
+    "tests/**"
+  ],
+  "deniedPaths": [
+    "**/.env*",
+    "**/*.key",
+    "**/*.p12",
+    "**/*.pem",
+    "**/id_rsa*",
+    "deploy/**",
+    "deployment/**",
+    "src/hooks.server.*",
+    "src/lib/api.*",
+    "src/routes/api/**",
+    "src/routes/investigations/**",
+    "src/routes/reports/**"
+  ]
+}

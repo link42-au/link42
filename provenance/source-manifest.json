@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/wan0net/link42",
+  "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+  "destinationRepository": "https://github.com/link42-au/link42",
+  "directSourceInputs": [
+    "content/blog/*.md",
+    "content/learn/**/*.md",
+    "packages/ui/src/Footer.svelte",
+    "packages/ui/src/components.css",
+    "packages/ui/src/patterns.css",
+    "packages/ui/src/theme.svelte.ts",
+    "scripts/generate-content.ts",
+    "src/app.html",
+    "src/brand.css",
+    "src/lib/server/blog.ts",
+    "src/routes/+error.svelte",
+    "src/routes/+page.server.ts",
+    "src/routes/+page.svelte",
+    "src/routes/about/+page.svelte",
+    "src/routes/blog/**",
+    "src/routes/changelog/+page.svelte",
+    "src/routes/learn/+layout.svelte",
+    "src/routes/learn/+page.svelte",
+    "src/routes/licence/+page.svelte",
+    "static/favicon.svg",
+    "static/logo-dark.svg",
+    "static/logo-light.svg",
+    "tests/content/blog.test.ts",
+    "tests/content/generate-content.test.ts",
+    "tokens/src/index.css",
+    "tokens/src/reset.css",
+    "tokens/src/tokens.css"
+  ],
+  "generatedNotCopied": [
+    "src/routes/learn/**/+page.svelte"
+  ],
+  "adaptationOnlyReferences": [
+    "packages/ui/src/PlatformBar.svelte",
+    "src/app.d.ts",
+    "src/hooks.server.ts",
+    "src/routes/+layout.server.ts",
+    "src/routes/+layout.svelte"
+  ],
+  "deniedSourcePaths": [
+    ".git/**",
+    "**/.env*",
+    "**/*.key",
+    "**/*.p12",
+    "**/*.pem",
+    "**/id_rsa*"
+  ],
+  "excludedCategories": [
+    "private repository history",
+    "authentication, sessions, login2 client code, admin gates, and user data",
+    "API, gateway, investigation, and report code",
+    "private services and workspace packages",
+    "deployment specifications, deployment scripts, DNS scripts, credentials, app IDs, and environment configuration",
+    "backups and build output"
+  ]
+}
