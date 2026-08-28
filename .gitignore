@@ -4,6 +4,8 @@ node_modules/
 coverage/
 test-results/
 playwright-report/
+.svelte-kit/
+build/
 .env
 .env.*
 !.env.example

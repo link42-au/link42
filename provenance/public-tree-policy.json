@@ -12,11 +12,18 @@
     "SECURITY.md",
     "THIRD_PARTY_NOTICES.md",
     "TRADEMARKS.md",
+    "biome.json",
     "package.json",
+    "playwright.config.ts",
     "pnpm-lock.yaml",
     "provenance/**",
     "scripts/**",
-    "tests/**"
+    "src/**",
+    "static/**",
+    "svelte.config.js",
+    "tests/**",
+    "tsconfig.json",
+    "vite.config.ts"
   ],
   "deniedPaths": [
     "**/.env*",

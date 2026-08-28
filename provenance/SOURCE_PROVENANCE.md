@@ -6,10 +6,12 @@ The machine-readable [source manifest](source-manifest.json) is authoritative fo
 
 Package manifests, lockfiles, configuration, documentation, licences, CI, and tests that are not direct source inputs must be authored cleanly in this independent repository. The private repository's `.git` directory and history must never be copied or filtered into this repository.
 
+Actual imports and adaptations are recorded in [source-receipts.json](source-receipts.json). Each receipt names its approved source path, SHA-256 at the pinned commit, use mode, and public destination. `verbatim` entries must remain byte-identical; adapted inputs and adaptation-only references are explicitly distinguished. Vendored third-party artifacts and their checksums are recorded separately in [third-party-assets.json](third-party-assets.json).
+
 Before importing a batch, pass every proposed source-relative path to:
 
 ```sh
 node scripts/check-source-manifest.mjs path/to/file another/approved/file
 ```
 
-The command exits unsuccessfully if the manifest is malformed, its source identity drifts, or any supplied path is not directly allowed. `pnpm verify` also checks the current public tree against the fail-closed public-tree policy.
+The command exits unsuccessfully if the manifest is malformed, its source identity drifts, or any supplied path is not directly allowed. `pnpm verify` also validates every receipt and third-party checksum, then checks the current public tree against the fail-closed public-tree policy.

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/wan0net/link42",
+  "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+  "receipts": [
+    {
+      "sourcePath": "tokens/src/tokens.css",
+      "sourceSha256": "6541d4bbb31777dcb3a716c26cf8a95607fdd1152056ca9d2cbd6ffa8fbbe729",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/lib/styles/app.css"]
+    },
+    {
+      "sourcePath": "tokens/src/reset.css",
+      "sourceSha256": "fd33851256b4f43dead6b5700709db74f9a915d61fd41563a39c3b3b04acef74",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/lib/styles/app.css"]
+    },
+    {
+      "sourcePath": "packages/ui/src/components.css",
+      "sourceSha256": "dcf777af6be430a0a6a8e780787ced0916cb9fe2c3ea26294439c36c8c4504bd",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/lib/styles/app.css"]
+    },
+    {
+      "sourcePath": "src/brand.css",
+      "sourceSha256": "d6734e955586e616f46588ee157fb65a9eaaaf71c81bb5365e98eb67377e7beb",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/lib/styles/app.css"]
+    },
+    {
+      "sourcePath": "packages/ui/src/Footer.svelte",
+      "sourceSha256": "73f92bf66f95873f4e207e9633814158710fad9b07e195e54d96d6253955deea",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/lib/components/SiteFooter.svelte"]
+    },
+    {
+      "sourcePath": "packages/ui/src/PlatformBar.svelte",
+      "sourceSha256": "24c4311b1376191cab4a7b29015fcb70fc616189ca1d7b7db50f9c69978606b3",
+      "mode": "adaptation-reference",
+      "destinationPaths": ["src/lib/components/SiteHeader.svelte"]
+    },
+    {
+      "sourcePath": "packages/ui/src/theme.svelte.ts",
+      "sourceSha256": "6acef62519f59e1aabbe2d196ad0d98808450cac68401ae4ace1721516a93116",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/lib/theme.ts"]
+    },
+    {
+      "sourcePath": "src/app.html",
+      "sourceSha256": "7d33831fc21500c9c9b436cbee89be21c7909b90c21c7cc8ec40b4027dd620b0",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/app.html"]
+    },
+    {
+      "sourcePath": "src/routes/+error.svelte",
+      "sourceSha256": "5f5682521990d5c682094fd086812777a88dc24ce8039d13815265f0eb6c4ebf",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/+error.svelte"]
+    },
+    {
+      "sourcePath": "static/favicon.svg",
+      "sourceSha256": "99b55b3a30682b1ad5cb6daf18b2d4053184ed6bc0195529f970f1b8baec3148",
+      "mode": "verbatim",
+      "destinationPaths": ["static/favicon.svg"]
+    },
+    {
+      "sourcePath": "static/logo-dark.svg",
+      "sourceSha256": "02702e22e4b1bf310f966d512d3ea065eb00e193e9cade88ca0baf399426f3c1",
+      "mode": "verbatim",
+      "destinationPaths": ["static/logo-dark.svg"]
+    },
+    {
+      "sourcePath": "static/logo-light.svg",
+      "sourceSha256": "9e58eef7737270939c3ec5b82a073846443017c42231a53f4735da1db4d1bc2c",
+      "mode": "verbatim",
+      "destinationPaths": ["static/logo-light.svg"]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 This repository is the independent, public source for the Link42 company website at [link42.app](https://link42.app). The website is being separated from Link42's private platform monorepo so that its public source, content provenance, licensing boundaries, and release history can be reviewed without exposing private services or operational configuration.
 
-The repository currently contains the publication policy and migration safeguards. Application source will be added in small, tested features recorded in [PLAN.md](PLAN.md). Until the public release and production cutover gates are complete, this repository is source-in-progress rather than the canonical production deployment.
+The repository contains the public-only website shell and the publication safeguards used to keep it independent of the private platform. Content is being added in small, tested features recorded in [PLAN.md](PLAN.md). Until the public release and production cutover gates are complete, this repository is source-in-progress rather than the canonical production deployment.
 
 ## Development
 

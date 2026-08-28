@@ -32,9 +32,7 @@
     "tokens/src/reset.css",
     "tokens/src/tokens.css"
   ],
-  "generatedNotCopied": [
-    "src/routes/learn/**/+page.svelte"
-  ],
+  "generatedNotCopied": ["src/routes/learn/**/+page.svelte"],
   "adaptationOnlyReferences": [
     "packages/ui/src/PlatformBar.svelte",
     "src/app.d.ts",
@@ -42,14 +40,7 @@
     "src/routes/+layout.server.ts",
     "src/routes/+layout.svelte"
   ],
-  "deniedSourcePaths": [
-    ".git/**",
-    "**/.env*",
-    "**/*.key",
-    "**/*.p12",
-    "**/*.pem",
-    "**/id_rsa*"
-  ],
+  "deniedSourcePaths": [".git/**", "**/.env*", "**/*.key", "**/*.p12", "**/*.pem", "**/id_rsa*"],
   "excludedCategories": [
     "private repository history",
     "authentication, sessions, login2 client code, admin gates, and user data",

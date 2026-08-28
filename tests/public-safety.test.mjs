@@ -26,10 +26,13 @@ const withTemporaryTree = async (files, callback) => {
 };
 
 test("public tree accepts only allow-listed ordinary files", async () => {
-  await withTemporaryTree({ "README.md": "public", "src/page.ts": "export const title = 'Link42';" }, async (root) => {
-    const files = await scanPublicTree(root, policy);
-    assert.deepEqual(files, ["README.md", "src/page.ts"]);
-  });
+  await withTemporaryTree(
+    { "README.md": "public", "src/page.ts": "export const title = 'Link42';" },
+    async (root) => {
+      const files = await scanPublicTree(root, policy);
+      assert.deepEqual(files, ["README.md", "src/page.ts"]);
+    },
+  );
 });
 
 test("public tree rejects an unlisted path", async () => {
@@ -49,4 +52,19 @@ test("public tree rejects content that resembles a hard-coded secret", async () 
   await withTemporaryTree({ "src/config.ts": unsafeAssignment }, async (root) => {
     await assert.rejects(() => scanPublicTree(root, policy), /resembles a committed secret/);
   });
+});
+
+test("public tree ignores generated build and test output", async () => {
+  await withTemporaryTree(
+    {
+      "README.md": "public",
+      ".svelte-kit/generated/private.js": "generated",
+      "build/private.js": "generated",
+      "test-results/result.json": "generated",
+    },
+    async (root) => {
+      const files = await scanPublicTree(root, policy);
+      assert.deepEqual(files, ["README.md"]);
+    },
+  );
 });

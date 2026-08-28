@@ -2,10 +2,10 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import test from "node:test";
 import {
+  assertDirectSourceInputs,
   EXPECTED_DESTINATION_REPOSITORY,
   EXPECTED_SOURCE_COMMIT,
   EXPECTED_SOURCE_REPOSITORY,
-  assertDirectSourceInputs,
   matchesAny,
   validateSourceManifest,
 } from "../scripts/lib/policy.mjs";
@@ -41,7 +41,10 @@ test("direct source allow-list fails closed", () => {
     "src/routes/blog/signing-key.pem",
     "../outside.txt",
   ]) {
-    assert.throws(() => assertDirectSourceInputs(manifest, [relativePath]), /not directly allow-listed|traversal/);
+    assert.throws(
+      () => assertDirectSourceInputs(manifest, [relativePath]),
+      /not directly allow-listed|traversal/,
+    );
   }
 });
 

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <mask id="fc">
+      <rect x="0" y="0" width="120" height="120" fill="white" />
+      <circle cx="60" cy="60" r="25" fill="black" />
+      <line x1="74" y1="74" x2="88" y2="88" stroke="black" stroke-width="14" stroke-linecap="round" />
+      <polyline points="38,72 54,56 66,64 82,42" fill="none" stroke="black" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" />
+      <circle cx="38" cy="72" r="7" fill="black" />
+      <circle cx="82" cy="42" r="7" fill="black" />
+    </mask>
+    <style>
+      :root {
+        --sl: #243c5a;
+        --cf: #ffffff;
+        --dk: #243c5a;
+        --lt: #ffffff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --sl: #334155;
+          --cf: #111110;
+          --dk: #f8fafc;
+          --lt: #111110;
+        }
+      }
+      .sl { fill: var(--sl); }
+      .cf { fill: var(--cf); }
+      .cr { fill: none; stroke: var(--dk); stroke-width: 5; }
+      .mh { fill: none; stroke: var(--dk); stroke-width: 10; stroke-linecap: round; }
+      .go { fill: none; stroke: var(--lt); stroke-width: 9; stroke-linejoin: round; stroke-linecap: round; }
+      .gi { fill: none; stroke: var(--dk); stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
+      .do { fill: var(--lt); }
+      .di { fill: var(--dk); }
+    </style>
+  </defs>
+
+  <g mask="url(#fc)">
+    <path class="sl" d="M 60 20 L 25 28 L 25 65 C 25 85 45 95 60 102 Z" />
+    <path d="M 60 20 L 95 28 L 95 65 C 95 85 75 95 60 102 Z" fill="#38bdf8" />
+  </g>
+
+  <circle class="cf" cx="60" cy="60" r="20" />
+  <circle class="cr" cx="60" cy="60" r="20" />
+  <line class="mh" x1="74" y1="74" x2="86" y2="86" />
+
+  <polyline class="go" points="38,72 54,56 66,64 82,42" />
+  <polyline class="gi" points="38,72 54,56 66,64 82,42" />
+
+  <circle class="do" cx="38" cy="72" r="6" />
+  <circle class="do" cx="54" cy="56" r="6" />
+  <circle class="do" cx="66" cy="64" r="6" />
+  <circle class="do" cx="82" cy="42" r="6" />
+  <circle class="di" cx="38" cy="72" r="4.5" />
+  <circle class="di" cx="54" cy="56" r="4.5" />
+  <circle class="di" cx="66" cy="64" r="4.5" />
+  <circle class="di" cx="82" cy="42" r="4.5" />
+</svg>

@@ -3,8 +3,17 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { matchesAny, validatePortableRelativePath } from "./lib/policy.mjs";
 
-const IGNORED_DIRECTORY_NAMES = new Set([".git", "node_modules"]);
-const SECRET_ASSIGNMENT = /\b(?:api[_-]?key|client[_-]?secret|password|private[_-]?key)\b\s*[:=]\s*["'][^"'\n]{8,}["']/i;
+const IGNORED_DIRECTORY_NAMES = new Set([
+  ".git",
+  ".svelte-kit",
+  "build",
+  "coverage",
+  "node_modules",
+  "playwright-report",
+  "test-results",
+]);
+const SECRET_ASSIGNMENT =
+  /\b(?:api[_-]?key|client[_-]?secret|password|private[_-]?key)\b\s*[:=]\s*["'][^"'\n]{8,}["']/i;
 
 const walk = async (root, directory = root) => {
   const entries = await fs.readdir(directory, { withFileTypes: true });
@@ -15,7 +24,9 @@ const walk = async (root, directory = root) => {
     }
     const absolutePath = path.join(directory, entry.name);
     if (entry.isSymbolicLink()) {
-      throw new Error(`symbolic links are not allowed in the public tree: ${path.relative(root, absolutePath)}`);
+      throw new Error(
+        `symbolic links are not allowed in the public tree: ${path.relative(root, absolutePath)}`,
+      );
     }
     if (entry.isDirectory()) {
       files.push(...(await walk(root, absolutePath)));
@@ -69,7 +80,9 @@ export const scanPublicTree = async (root, policy) => {
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const root = process.cwd();
-  const policy = JSON.parse(await fs.readFile(new URL("../provenance/public-tree-policy.json", import.meta.url), "utf8"));
+  const policy = JSON.parse(
+    await fs.readFile(new URL("../provenance/public-tree-policy.json", import.meta.url), "utf8"),
+  );
   const files = await scanPublicTree(root, policy);
   console.log(`Validated ${files.length} public-tree file(s).`);
 }
