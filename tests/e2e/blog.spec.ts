@@ -24,7 +24,7 @@ test("Blog index and article are responsive and accessible", async ({ page }, te
 
 test("homepage presents the latest article card", async ({ page }, testInfo) => {
   await page.goto("/");
-  const latest = page.locator(".latest-article__card");
+  const latest = page.locator(".latest-article-card");
   await expect(latest).toHaveAttribute("href", `/blog/${articleSlug}`);
   await expect(latest.getByRole("heading", { name: articleTitle })).toBeVisible();
   await expect(latest.getByText("4 August 2026")).toBeVisible();

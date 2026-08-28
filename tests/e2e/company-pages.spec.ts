@@ -8,7 +8,7 @@ const companyPages = [
     heading: /Security tooling that starts useful/,
     title: "link42 — Cyber without the theatre",
     description:
-      "link42 builds small, focused tools for people who actually do security. No dashboards of dashboards. No compliance theatre. Just things that work.",
+      "link42 builds tools for people who actually do security. No dashboards of dashboards. No compliance theatre. Just things that work.",
   },
   {
     route: "/about",

@@ -38,6 +38,13 @@
   --accent-border: #bfdbfe;
   --focus: #2563eb;
   --status: #0d9488;
+  --accent-blue: var(--accent);
+  --accent-teal: var(--status);
+  --accent-orange: var(--amber);
+  --accent-rose: #e11d48;
+  --blue-bg: var(--accent-bg);
+  --blue-border: var(--accent-border);
+  --shadow-md: var(--shadow);
   --green: #16a34a;
   --green-bg: #f0fdf4;
   --green-border: #bbf7d0;
@@ -65,6 +72,13 @@
   --accent-border: #1d4ed8;
   --focus: #60a5fa;
   --status: #2dd4bf;
+  --accent-blue: var(--accent);
+  --accent-teal: var(--status);
+  --accent-orange: var(--amber);
+  --accent-rose: #fb7185;
+  --blue-bg: var(--accent-bg);
+  --blue-border: var(--accent-border);
+  --shadow-md: var(--shadow);
   --green: #22c55e;
   --green-bg: #14291e;
   --green-border: #166534;
@@ -161,7 +175,7 @@ svg {
 }
 
 main {
-  display: flex;
+  display: block;
   flex: 1;
   width: 100%;
 }
