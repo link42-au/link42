@@ -12,14 +12,20 @@ test("public shell exposes only approved navigation", async () => {
     assert.match(header, new RegExp(`href: \\"${route}\\"`));
   }
   assert.match(header, /https:\/\/rule1\.link42\.app/);
-  assert.doesNotMatch(header, /login2|investigations|reports|\/api\b|gravatar|session|sign.?in/i);
+  assert.match(header, /class="platform-bar"/);
+  assert.match(header, /class="pb-app pb-app--active"/);
+  assert.doesNotMatch(
+    header,
+    /login2|investigations|reports|\/api\b|gravatar|session|sign.?in|account|sign.?out/i,
+  );
 });
 
-test("footer publishes ownership, source and durable Rule1 links", async () => {
+test("footer preserves the original public platform attribution", async () => {
   const footer = await read("src/lib/components/SiteFooter.svelte");
-  assert.match(footer, /Copyright © 2026 Iain Dickson/);
-  assert.match(footer, /https:\/\/github\.com\/link42-au\/link42/);
+  assert.match(footer, /Canberra, Australia/);
+  assert.match(footer, /<strong>link42<\/strong>/);
   assert.match(footer, /https:\/\/rule1\.link42\.app/);
+  assert.doesNotMatch(footer, /login2|threat10|patch8|peer6/i);
 });
 
 test("fonts are self-hosted with no remote font origin", async () => {
@@ -37,12 +43,19 @@ test("no private shell coupling exists anywhere in application source", async ()
     "src/lib/components/SiteHeader.svelte",
     "src/lib/components/SiteFooter.svelte",
     "src/routes/+layout.svelte",
-    "src/routes/+page.svelte",
     "src/routes/+error.svelte",
   ];
   const source = (await Promise.all(paths.map(read))).join("\n");
   assert.doesNotMatch(
     source,
     /@link42\/(?:auth-client|ui|tokens)|login2|gravatar|locals\.user|VITE_AUTH|investigations|reports|\/api\b/i,
+  );
+});
+
+test("homepage marketing copy has no executable private coupling", async () => {
+  const homepage = await read("src/routes/+page.svelte");
+  assert.doesNotMatch(
+    homepage,
+    /from\s+["'][^"']*(?:auth|session|login2)[^"']*["']|href=["'][^"']*(?:login2|\/(?:api|reports|investigations)\b)[^"']*["']|locals\.user|VITE_AUTH|gravatar|(?:sign.?in|sign.?out|account|session)\s*[=:]/i,
   );
 });

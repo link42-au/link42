@@ -180,7 +180,7 @@
       "sourceBlobSha1": "4e24ddfba603a102cc43fc3f0c2005a8a2683fe7",
       "sourceSha256": "913800f6ef7784cc756014fe1a94033f3d4acfe4cebf0b697a4ba7ab71c50338",
       "destinationPath": "src/routes/+page.svelte",
-      "destinationSha256": "dafb6cf3432975838734308b79b8da891836c125d31b296495800af2aedf9d5f",
+      "destinationSha256": "276a3f0890046c401c81417e73f691e561e29d3e500020e86ade37a1cdfaba38",
       "mode": "adapted"
     },
     {
@@ -297,7 +297,7 @@
       "sourceBlobSha1": "592ca1ff8980ee8589862df67bd694e75ca63574",
       "sourceSha256": "6541d4bbb31777dcb3a716c26cf8a95607fdd1152056ca9d2cbd6ffa8fbbe729",
       "destinationPath": "src/lib/styles/app.css",
-      "destinationSha256": "d3d82f2a0d4a8ea107dbaad6b88f2dc1d8e83b12728d69a8a2386bbdff4a7268",
+      "destinationSha256": "890c2253b7d2317a123a497446daafb91dc0b8de04b1082a00a299203309ef25",
       "mode": "adapted"
     },
     {
@@ -306,7 +306,7 @@
       "sourceBlobSha1": "2b6de211ba1ac104f6cd57904e8061e37b033096",
       "sourceSha256": "fd33851256b4f43dead6b5700709db74f9a915d61fd41563a39c3b3b04acef74",
       "destinationPath": "src/lib/styles/app.css",
-      "destinationSha256": "d3d82f2a0d4a8ea107dbaad6b88f2dc1d8e83b12728d69a8a2386bbdff4a7268",
+      "destinationSha256": "890c2253b7d2317a123a497446daafb91dc0b8de04b1082a00a299203309ef25",
       "mode": "adapted"
     },
     {
@@ -315,7 +315,7 @@
       "sourceBlobSha1": "44123034521a64ac49479aeee64c343cef7627c2",
       "sourceSha256": "dcf777af6be430a0a6a8e780787ced0916cb9fe2c3ea26294439c36c8c4504bd",
       "destinationPath": "src/lib/styles/app.css",
-      "destinationSha256": "d3d82f2a0d4a8ea107dbaad6b88f2dc1d8e83b12728d69a8a2386bbdff4a7268",
+      "destinationSha256": "890c2253b7d2317a123a497446daafb91dc0b8de04b1082a00a299203309ef25",
       "mode": "adapted"
     },
     {
@@ -324,7 +324,7 @@
       "sourceBlobSha1": "9e102e77fd6a0b5dd2e9390ea6e56fc321f2e70c",
       "sourceSha256": "d6734e955586e616f46588ee157fb65a9eaaaf71c81bb5365e98eb67377e7beb",
       "destinationPath": "src/lib/styles/app.css",
-      "destinationSha256": "d3d82f2a0d4a8ea107dbaad6b88f2dc1d8e83b12728d69a8a2386bbdff4a7268",
+      "destinationSha256": "890c2253b7d2317a123a497446daafb91dc0b8de04b1082a00a299203309ef25",
       "mode": "adapted"
     },
     {
@@ -333,7 +333,7 @@
       "sourceBlobSha1": "3f9c68d7d6199bd5c887d9a57afcbe1773600e7e",
       "sourceSha256": "73f92bf66f95873f4e207e9633814158710fad9b07e195e54d96d6253955deea",
       "destinationPath": "src/lib/components/SiteFooter.svelte",
-      "destinationSha256": "5864c4d0f4b62af21bb5483b222b02e582db81b658d182c7cdba41535a0b11c4",
+      "destinationSha256": "463a0a7789b77a8e8c53e76a6df2fcf559f0b4a6a3be16e615d22b2e6dcaaa7a",
       "mode": "adapted"
     },
     {
@@ -342,7 +342,7 @@
       "sourceBlobSha1": "1b55fa82c2b45bb642f2133652dac677408dce28",
       "sourceSha256": "24c4311b1376191cab4a7b29015fcb70fc616189ca1d7b7db50f9c69978606b3",
       "destinationPath": "src/lib/components/SiteHeader.svelte",
-      "destinationSha256": "bee189a1cc19e8e6485fbba9d2ddb21636f9bec3a321c30c3432dee01a20266e",
+      "destinationSha256": "e4385a192b605090cae0b0a6007a4192f7bc1d7428d16b2ce148f66037062b6e",
       "mode": "adapted"
     },
     {

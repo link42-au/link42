@@ -15,34 +15,28 @@ test("shell is responsive, local-only and accessible", async ({ page }, testInfo
   expect(response?.status()).toBe(200);
   await expectConfiguredTheme(page, testInfo);
   await expect(page.getByRole("heading", { name: /Security tooling that starts useful/ })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Link42 home" })).toBeVisible();
-  await expect(page.getByRole("link", { name: /Open Rule1/ }).first()).toHaveAttribute(
+  const platformNavigation = page.getByRole("navigation", { name: "Platform navigation" });
+  await expect(platformNavigation.getByRole("link", { name: "Link42 home" })).toBeVisible();
+  await expect(platformNavigation.getByRole("link", { name: "Open rule1" })).toHaveAttribute(
     "href",
     "https://rule1.link42.app",
   );
-  await expect(page.getByRole("link", { name: "Source", exact: true })).toHaveAttribute(
-    "href",
-    "https://github.com/link42-au/link42",
-  );
+  await expect(page.getByRole("contentinfo")).toContainText("Canberra, Australia");
 
   await expectNoHorizontalOverflow(page);
 
-  if (testInfo.project.name.startsWith("mobile")) {
-    const menu = page.locator('button[aria-controls="site-navigation"]');
-    await expect(menu).toBeVisible();
-    await expect(menu).toHaveAccessibleName("Open navigation");
-    await expect(page.getByRole("navigation", { name: "Primary navigation" })).toBeHidden();
-    await menu.click();
-    await expect(menu).toHaveAttribute("aria-expanded", "true");
-    await expect(menu).toHaveAccessibleName("Close navigation");
-    await expect(
-      page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Licence" }),
-    ).toBeVisible();
-    await page.keyboard.press("Escape");
-    await expect(menu).toHaveAttribute("aria-expanded", "false");
-  } else {
-    await expect(page.getByRole("navigation", { name: "Primary navigation" })).toBeVisible();
+  const more = page.getByRole("button", { name: "more" });
+  await more.click();
+  await expect(more).toHaveAttribute("aria-expanded", "true");
+  for (const label of ["Learn", "About", "Blog", "Changelog", "Licence"]) {
+    await expect(page.locator("#platform-more").getByRole("link", { name: label })).toBeVisible();
   }
+  await page.keyboard.press("Escape");
+  await expect(more).toHaveAttribute("aria-expanded", "false");
+
+  await page.goto("/about");
+  await expect(page.getByRole("navigation", { name: "Site navigation" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "About", exact: true }).last()).toHaveClass(/active/);
 
   const accessibility = await new AxeBuilder({ page }).analyze();
   expect(accessibility.violations).toEqual([]);

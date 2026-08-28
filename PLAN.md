@@ -120,6 +120,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 | 6 | Verification and private CI | Add one-command verification, route and link tests, Playwright and Axe checks, secret and privacy scans, dependency audit, deterministic generation checks, and hosted CI in the private repository. | 3, 4, 5 | done |
 | 7 | Public release | Publish the independent repository only after private hosted CI succeeds; configure public default-branch protections and security features; verify a credential-free fresh clone, full history, tree, receipts, routes, browsers, accessibility, and final public hosted CI. Hosting and production remain excluded. | 6 | done |
 | 8 | GitHub Pages and domain preparation | Produce strict static output for every included route and asset, add a pinned least-privilege Pages workflow for protected `main`, and prepare domain-root metadata for `link42.app`. Repository Pages settings, custom-domain APIs, DNS, DigitalOcean, and production verification remain excluded. | 7 | done |
+| 9 | Faithful public homepage migration | Correct the public homepage and shell to match the pinned public-facing source: original copy, section order, visual structure, theme behaviour, and public header/footer presentation. Keep only public surfaces; exclude auth, sessions, API routes, and private runtime/deployment code. | 1, 2, 4, 5 | done |
 
 One completed feature equals one tested commit and push. Do not start the next feature with uncommitted work.
 

@@ -11,7 +11,7 @@ const pageDefinitions = [
     file: "src/routes/+page.svelte",
     title: "link42 — Cyber without the theatre",
     description:
-      "link42 builds small, focused tools for people who actually do security. No dashboards of dashboards. No compliance theatre. Just things that work.",
+      "link42 builds tools for people who actually do security. No dashboards of dashboards. No compliance theatre. Just things that work.",
     canonical: "https://link42.app",
     heading: "Security tooling that starts useful",
   },
@@ -74,28 +74,42 @@ test("company pages expose only durable product and repository links", async () 
   assert.doesNotMatch(combined, /github\.com\/wan0net\/link42/);
 });
 
-test("public copy excludes stale private-platform and absolute authorship claims", async () => {
+test("company pages do not expose excluded executable private surfaces", async () => {
   const combined = (await Promise.all(pageDefinitions.map(({ file }) => read(file)))).join("\n");
 
   for (const denied of [
-    /source code is proprietary/i,
-    /not open source/i,
-    /not available for redistribution/i,
-    /every line of code/i,
-    /built entirely by/i,
-    /99%/,
-    /barely supervised/i,
-    /DigitalOcean/i,
-    /Postgres/i,
-    /login2/i,
-    /patch8/i,
-    /threat10/i,
-    /pipeline rebuild/i,
+    /href=["']\/(?:api|reports|investigations)(?:["'])/i,
+    /from\s+["'][^"']*(?:auth|api|session|login2)[^"']*["']/i,
   ]) {
     assert.doesNotMatch(combined, denied);
   }
+});
 
-  assert.doesNotMatch(combined, /(?:source|repository) is publicly available/i);
+test("homepage keeps the migrated public information architecture", async () => {
+  const source = await read("src/routes/+page.svelte");
+
+  for (const required of [
+    'class="hero"',
+    "Australian-built security tooling",
+    'href="#products"',
+    'class="latest-article"',
+    'class="manifesto"',
+    'id="products"',
+    'class="principles"',
+    'class="cta"',
+    'class="ai-notice"',
+    "What we're building",
+    "One integrated platform",
+    "AI-generated content",
+    "rule1.link42.app",
+    "threat10",
+    "patch8",
+  ]) {
+    assert.ok(source.includes(required), required);
+  }
+
+  assert.equal((source.match(/class="product-card(?:\s|")/g) ?? []).length, 3);
+  assert.equal((source.match(/class="product-card product-card--disabled"/g) ?? []).length, 2);
 });
 
 test("licence page states each approved boundary without widening it", async () => {
