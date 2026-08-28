@@ -123,6 +123,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 | 9 | Faithful public homepage migration | Correct the public homepage and shell to match the pinned public-facing source: original copy, section order, visual structure, theme behaviour, and public header/footer presentation. Keep only public surfaces; exclude auth, sessions, API routes, and private runtime/deployment code. | 1, 2, 4, 5 | done |
 | 10 | Open-source hosting and feedback guidance | Publish a dedicated page covering repository and site hosting, the actual technology used by the website and Rule1, public bug and suggestion routes, and private security reporting; align site navigation and verification with the new route. | 9 | done |
 | 11 | Secondary navigation alignment | Centre the secondary navigation link group on desktop and tablet while retaining left-aligned horizontal scrolling and first-link reachability on mobile. | 10 | done |
+| 12 | Correct secondary navigation alignment | Match Rule1 by left-aligning the secondary navigation across viewports with a 20px desktop and tablet inset, while preserving a 16px mobile inset, horizontal scrolling, and no page overflow. | 11 | done |
 
 One completed feature equals one tested commit and push. Do not start the next feature with uncommitted work.
 

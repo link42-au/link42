@@ -65,7 +65,7 @@ test("theme switch is labelled and persists", async ({ page }, testInfo) => {
   expect(accessibility.violations).toEqual([]);
 });
 
-test("secondary navigation is centred on desktop and reachable on mobile", async ({ page }, testInfo) => {
+test("secondary navigation is left aligned and reachable on mobile", async ({ page }, testInfo) => {
   const isMobile = testInfo.project.name.startsWith("mobile-");
   if (isMobile) {
     await page.setViewportSize({ width: 320, height: 812 });
@@ -88,12 +88,9 @@ test("secondary navigation is centred on desktop and reachable on mobile", async
     );
   } else {
     const firstLinkBox = await links.first().boundingBox();
-    const lastLinkBox = await links.last().boundingBox();
     expect(firstLinkBox).not.toBeNull();
-    expect(lastLinkBox).not.toBeNull();
-    const groupCentre = ((firstLinkBox?.x ?? 0) + (lastLinkBox?.x ?? 0) + (lastLinkBox?.width ?? 0)) / 2;
-    expect(groupCentre).toBeCloseTo(640, 0);
-    await expect(navigationInner).toHaveCSS("justify-content", "center");
+    expect(firstLinkBox?.x).toBeCloseTo(20, 0);
+    await expect(navigationInner).toHaveCSS("justify-content", "flex-start");
   }
 
   await expectNoHorizontalOverflow(page);
