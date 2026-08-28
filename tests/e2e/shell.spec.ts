@@ -6,7 +6,7 @@ test("shell is responsive, local-only and accessible", async ({ page }, testInfo
   const remoteRequests: string[] = [];
   page.on("request", (request) => {
     const url = new URL(request.url());
-    if (url.origin !== "http://127.0.0.1:4173") {
+    if (url.origin !== "http://127.0.0.1:4174") {
       remoteRequests.push(request.url());
     }
   });

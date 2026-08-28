@@ -10,7 +10,7 @@ Repository visibility: Public
 - **Purpose:** Publish and maintain the public Link42 company website independently of the private platform monorepo.
 - **Audience:** Security practitioners, learners, customers, contributors, and the public.
 - **Stack:** TypeScript, Svelte 5, SvelteKit, pnpm, Node 22, Vite, Vitest, and Biome.
-- **Runtime target:** SvelteKit `adapter-node`; hosting and production cutover are outside this plan.
+- **Runtime target:** SvelteKit `adapter-static` output for GitHub Pages at the `link42.app` domain root; repository Pages settings, custom-domain APIs, DNS, and production cutover remain separate.
 - **Content:** Git-backed Markdown for Learn and Blog.
 - **Software licence:** AGPL-3.0-only.
 - **Original editorial content licence:** CC BY-NC 4.0.
@@ -102,7 +102,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 - Move the required footer, theme, and public navigation into website-owned source; remove `@link42/ui`.
 - Remove `@link42/auth-client`, `src/lib/api.ts`, auth locals, session resolution, sign-out logic, and auth environment variables.
 - Remove Cytoscape and every dependency used only by investigations.
-- Retain only Svelte, SvelteKit, `adapter-node`, and Marked as runtime dependencies.
+- Retain only Svelte, SvelteKit, `adapter-static`, and Marked as runtime dependencies.
 - Retain Vite, TypeScript, Vitest, Biome, and the Svelte Vite plugin for development.
 - Add Playwright and Axe coverage only after plan and dependency approval.
 - Replace the Google Fonts runtime import with either locally vendored, provenance-recorded Geist assets under their original licence or an approved system-font fallback.
@@ -119,6 +119,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 | 5 | Public company pages | Port home, about, changelog, and licence after editorial and public-safety review; remove or neutralise links to excluded API, reports, and investigations routes and publish the selected licensing policy accurately. | 3, 4 | done |
 | 6 | Verification and private CI | Add one-command verification, route and link tests, Playwright and Axe checks, secret and privacy scans, dependency audit, deterministic generation checks, and hosted CI in the private repository. | 3, 4, 5 | done |
 | 7 | Public release | Publish the independent repository only after private hosted CI succeeds; configure public default-branch protections and security features; verify a credential-free fresh clone, full history, tree, receipts, routes, browsers, accessibility, and final public hosted CI. Hosting and production remain excluded. | 6 | done |
+| 8 | GitHub Pages and domain preparation | Produce strict static output for every included route and asset, add a pinned least-privilege Pages workflow for protected `main`, and prepare domain-root metadata for `link42.app`. Repository Pages settings, custom-domain APIs, DNS, DigitalOcean, and production verification remain excluded. | 7 | done |
 
 One completed feature equals one tested commit and push. Do not start the next feature with uncommitted work.
 
@@ -136,6 +137,8 @@ One completed feature equals one tested commit and push. Do not start the next f
 - `pnpm audit --prod --audit-level=high` has no high or critical finding.
 - Secret scans pass on the repository tree and complete independent history.
 - Hosted CI must complete successfully; local results cannot substitute for an unavailable hosted run.
+- The static artifact contains Home, About, Changelog, Licence, all 15 Learn endpoints, Blog index and article, RSS, 404 handling, local fonts, and all referenced assets at domain-root paths.
+- The Pages workflow builds on protected `main` or manual dispatch only, deploys no pull request, uses pinned actions, and separates read-only build permission from the Pages and OIDC deploy permissions.
 
 ## Commands
 
@@ -155,8 +158,8 @@ pnpm verify
 
 - The private monorepo remains in place and private.
 - The website repository is public after completing Feature 7's explicit publication gates.
-- No public deployment specification, credential, private app identifier, or DNS mutation script is copied.
-- Hosting, DNS, staging, and production cutover are explicitly excluded from this plan.
+- No credential, private app identifier, or DNS mutation script is copied.
+- GitHub Pages source preparation is included in Feature 8; repository settings, custom-domain APIs, DNS, DigitalOcean, staging, and production cutover are explicitly excluded.
 - Keep website links pointed at the durable `https://rule1.link42.app` product URL, not either GitHub Pages owner URL.
 
 ## Known Risks
@@ -166,7 +169,7 @@ pnpm verify
 - The current changelog links to `/reports/**` and `/api`; those links would be broken or imply deferred functionality is present.
 - The current About page publishes infrastructure, costs, private-repository references, and broad authorship claims. It requires an editorial accuracy review.
 - Code, editorial text, brand assets, and third-party content require explicit file-level licensing boundaries; a root AGPL licence alone must not imply a trademark grant for logos.
-- A future deployment must be separately planned and must not expose private platform components or configuration.
+- Enabling Pages, attaching the custom domain, changing DNS, and verifying production require a separate controlled step after Feature 8 succeeds.
 
 ## Discovered Dependencies
 
@@ -176,3 +179,4 @@ pnpm verify
 | D2 | Approve Playwright and Axe development dependencies. **Decision:** approved for the verification feature. | 6 | resolved |
 | D3 | Choose locally vendored Geist fonts or the system-font fallback. **Decision:** locally vendored Geist assets with provenance, checksums, and their original licence. | 2 | resolved |
 | D4 | Permit literal SvelteKit bracketed route directories in concrete provenance paths without permitting `*` or `?` wildcards. | 4 | resolved |
+| D5 | Replace `adapter-node` with `adapter-static` and add immutable official GitHub Pages actions. **Decision:** approved for Feature 8 with exact action SHAs and least-privilege jobs. | 8 | resolved |

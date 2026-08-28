@@ -28,7 +28,7 @@
     "verify": "pnpm check && pnpm check:gitleaks && pnpm test && pnpm build && pnpm check:routes && pnpm test:e2e && pnpm audit --prod --audit-level=high"
   },
   "dependencies": {
-    "@sveltejs/adapter-node": "5.5.7",
+    "@sveltejs/adapter-static": "3.0.10",
     "@sveltejs/kit": "2.70.3",
     "marked": "18.0.11",
     "svelte": "5.56.10"

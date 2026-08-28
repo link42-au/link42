@@ -1,12 +1,10 @@
-import { spawn } from "node:child_process";
-import { access } from "node:fs/promises";
-import { createServer } from "node:net";
-import { dirname, resolve } from "node:path";
+import { access, lstat, readdir, readFile } from "node:fs/promises";
+import { dirname, extname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertValidDocumentGraph } from "./check-links.mjs";
 
 const REPOSITORY_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const HOST = "127.0.0.1";
+const BUILD_ROOT = resolve(REPOSITORY_ROOT, "build");
 const ARTICLE_SLUG = "irap-assessed-not-certified-or-accredited";
 
 export const HTML_ROUTES = [
@@ -43,104 +41,129 @@ export const ABSENT_ROUTES = [
   "/blog/does-not-exist",
 ];
 
-const reservePort = async () => {
-  const server = createServer();
-  await new Promise((resolveListen, reject) => {
-    server.once("error", reject);
-    server.listen(0, HOST, resolveListen);
-  });
-  const address = server.address();
-  if (!address || typeof address === "string") throw new Error("could not reserve a local test port");
-  await new Promise((resolveClose, reject) =>
-    server.close((error) => (error ? reject(error) : resolveClose())),
-  );
-  return address.port;
+const REQUIRED_STATIC_ASSETS = [
+  "/.nojekyll",
+  "/404.html",
+  "/favicon.svg",
+  "/logo-dark.svg",
+  "/logo-light.svg",
+  "/fonts/Geist-Variable.woff2",
+  "/fonts/GeistMono-Variable.woff2",
+  "/fonts/OFL.txt",
+];
+
+const toBuildPath = (pathname) => {
+  if (pathname === "/") return resolve(BUILD_ROOT, "index.html");
+  const relativePath = pathname.replace(/^\/+|\/+$/gu, "");
+  const basename = relativePath.split("/").at(-1) ?? "";
+  return extname(relativePath) || basename.startsWith(".")
+    ? resolve(BUILD_ROOT, relativePath)
+    : resolve(BUILD_ROOT, relativePath, "index.html");
 };
 
-const waitForServer = async (origin, child, output) => {
-  const deadline = Date.now() + 20_000;
-  while (Date.now() < deadline) {
-    if (child.exitCode !== null) {
-      throw new Error(`built website server exited with ${child.exitCode}\n${output.join("")}`);
-    }
-    try {
-      const response = await fetch(origin, { redirect: "manual" });
-      if (response.status === 200) return;
-    } catch {
-      // The server has not bound its local port yet.
-    }
-    await new Promise((resolveDelay) => setTimeout(resolveDelay, 100));
+const assertInsideBuild = (path) => {
+  const relativePath = relative(BUILD_ROOT, path);
+  if (relativePath === "" || relativePath.startsWith("..") || relativePath.startsWith("/")) {
+    throw new Error(`${path}: artifact path escapes build root`);
   }
-  throw new Error(`timed out waiting for built website server\n${output.join("")}`);
 };
 
-const stopServer = async (child) => {
-  if (child.exitCode !== null) return;
-  child.kill("SIGTERM");
-  await Promise.race([
-    new Promise((resolveExit) => child.once("exit", resolveExit)),
-    new Promise((resolveTimeout) => setTimeout(resolveTimeout, 5_000)),
-  ]);
-  if (child.exitCode === null) child.kill("SIGKILL");
+const readArtifact = async (pathname, label = pathname) => {
+  const path = toBuildPath(pathname);
+  assertInsideBuild(path);
+  const stats = await lstat(path).catch(() => null);
+  if (!stats?.isFile() || stats.isSymbolicLink()) {
+    throw new Error(`${label}: missing regular static artifact ${relative(BUILD_ROOT, path)}`);
+  }
+  return readFile(path);
 };
 
-const fetchLocal = async (origin, target) => fetch(`${origin}${target}`, { redirect: "manual" });
+const assertRouteAbsent = async (route) => {
+  const relativePath = route.replace(/^\/+|\/+$/gu, "");
+  const candidates = [
+    resolve(BUILD_ROOT, relativePath),
+    resolve(BUILD_ROOT, `${relativePath}.html`),
+    resolve(BUILD_ROOT, relativePath, "index.html"),
+  ];
+  for (const candidate of candidates) {
+    assertInsideBuild(candidate);
+    try {
+      await access(candidate);
+      throw new Error(`${route}: excluded route produced ${relative(BUILD_ROOT, candidate)}`);
+    } catch (error) {
+      if (error instanceof Error && "code" in error && error.code === "ENOENT") continue;
+      throw error;
+    }
+  }
+};
+
+const listArtifactFiles = async (directory = BUILD_ROOT) => {
+  const files = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = resolve(directory, entry.name);
+    if (entry.isSymbolicLink()) {
+      throw new Error(`${relative(BUILD_ROOT, path)}: symbolic links are not allowed in the artifact`);
+    }
+    if (entry.isDirectory()) files.push(...(await listArtifactFiles(path)));
+    else if (entry.isFile()) files.push(path);
+  }
+  return files;
+};
 
 export const checkBuiltRoutes = async () => {
-  await access(resolve(REPOSITORY_ROOT, "build/index.js"));
-  const port = await reservePort();
-  const origin = `http://${HOST}:${port}`;
-  const output = [];
-  const child = spawn(process.execPath, ["build/index.js"], {
-    cwd: REPOSITORY_ROOT,
-    env: { ...process.env, HOST, ORIGIN: origin, PORT: String(port) },
-    stdio: ["ignore", "pipe", "pipe"],
-  });
-  child.stdout.on("data", (chunk) => output.push(chunk.toString()));
-  child.stderr.on("data", (chunk) => output.push(chunk.toString()));
-
-  try {
-    await waitForServer(origin, child, output);
-    const documents = new Map();
-    for (const route of HTML_ROUTES) {
-      const response = await fetchLocal(origin, route);
-      if (response.status !== 200) throw new Error(`${route}: expected 200, received ${response.status}`);
-      if (!response.headers.get("content-type")?.startsWith("text/html")) {
-        throw new Error(`${route}: expected an HTML response`);
-      }
-      documents.set(route, await response.text());
+  const documents = new Map();
+  for (const route of HTML_ROUTES) {
+    const html = (await readArtifact(route)).toString("utf8");
+    if (!html.startsWith("<!doctype html>")) {
+      throw new Error(`${route}: expected a prerendered HTML document`);
     }
-
-    const rss = await fetchLocal(origin, "/blog/rss.xml");
-    if (rss.status !== 200) throw new Error(`/blog/rss.xml: expected 200, received ${rss.status}`);
-    if (rss.headers.get("content-type") !== "application/rss+xml; charset=utf-8") {
-      throw new Error("/blog/rss.xml: unexpected content type");
-    }
-    const rssBody = await rss.text();
-    if (!rssBody.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || !rssBody.includes(ARTICLE_SLUG)) {
-      throw new Error("/blog/rss.xml: missing expected XML declaration or current article");
-    }
-
-    const internalTargets = assertValidDocumentGraph(documents);
-    for (const target of internalTargets) {
-      const response = await fetchLocal(origin, target);
-      if (response.status !== 200) {
-        throw new Error(`${target}: linked internal target returned ${response.status}`);
-      }
-    }
-    for (const route of ABSENT_ROUTES) {
-      const response = await fetchLocal(origin, route);
-      if (response.status !== 404) throw new Error(`${route}: expected 404, received ${response.status}`);
-    }
-
-    return {
-      checkedHtmlRoutes: documents.size,
-      checkedInternalTargets: internalTargets.size,
-      checkedMissingRoutes: ABSENT_ROUTES.length,
-    };
-  } finally {
-    await stopServer(child);
+    documents.set(route, html);
   }
+
+  const rssBody = (await readArtifact("/blog/rss.xml")).toString("utf8");
+  if (!rssBody.startsWith('<?xml version="1.0" encoding="UTF-8"?>') || !rssBody.includes(ARTICLE_SLUG)) {
+    throw new Error("/blog/rss.xml: missing expected XML declaration or current article");
+  }
+
+  for (const asset of REQUIRED_STATIC_ASSETS) await readArtifact(asset, asset);
+  await access(resolve(BUILD_ROOT, "CNAME")).then(
+    () => {
+      throw new Error("CNAME: must not be generated before custom-domain configuration is approved");
+    },
+    (error) => {
+      if (!(error instanceof Error) || !("code" in error) || error.code !== "ENOENT") throw error;
+    },
+  );
+  await access(resolve(BUILD_ROOT, "index.js")).then(
+    () => {
+      throw new Error("index.js: adapter-node server output must not be present");
+    },
+    (error) => {
+      if (!(error instanceof Error) || !("code" in error) || error.code !== "ENOENT") throw error;
+    },
+  );
+
+  const internalTargets = assertValidDocumentGraph(documents);
+  for (const target of internalTargets) {
+    const pathname = new URL(target, "https://link42.app").pathname;
+    await readArtifact(pathname, target);
+  }
+  for (const route of ABSENT_ROUTES) await assertRouteAbsent(route);
+
+  const artifactFiles = await listArtifactFiles();
+  if (!artifactFiles.some((path) => path.endsWith(".js"))) {
+    throw new Error("static artifact has no generated JavaScript assets");
+  }
+  if (!artifactFiles.some((path) => path.endsWith(".css"))) {
+    throw new Error("static artifact has no generated CSS assets");
+  }
+
+  return {
+    checkedArtifactFiles: artifactFiles.length,
+    checkedHtmlRoutes: documents.size,
+    checkedInternalTargets: internalTargets.size,
+    checkedMissingRoutes: ABSENT_ROUTES.length,
+  };
 };
 
 const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
@@ -148,7 +171,7 @@ if (isMain) {
   try {
     const result = await checkBuiltRoutes();
     console.log(
-      `Route verification passed: ${result.checkedHtmlRoutes} HTML routes, RSS, ${result.checkedInternalTargets} internal targets, and ${result.checkedMissingRoutes} expected 404 routes.`,
+      `Static artifact verification passed: ${result.checkedHtmlRoutes} HTML routes, RSS, ${result.checkedInternalTargets} internal targets, ${result.checkedMissingRoutes} absent routes, and ${result.checkedArtifactFiles} files.`,
     );
   } catch (error) {
     console.error(error instanceof Error ? error.message : String(error));
