@@ -13,7 +13,8 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "pnpm check:manifest && pnpm check:receipts && pnpm check:public && pnpm check:format && pnpm check:types",
+    "generate:content": "node scripts/generate-content.ts",
+    "check": "pnpm generate:content --check && pnpm check:manifest && pnpm check:receipts && pnpm check:public && pnpm check:format && pnpm check:types",
     "check:manifest": "node scripts/check-source-manifest.mjs",
     "check:receipts": "node scripts/check-source-receipts.mjs",
     "check:public": "node scripts/check-public-safety.mjs",
@@ -26,6 +27,7 @@
   "dependencies": {
     "@sveltejs/adapter-node": "5.5.7",
     "@sveltejs/kit": "2.70.3",
+    "marked": "18.0.11",
     "svelte": "5.56.10"
   },
   "devDependencies": {

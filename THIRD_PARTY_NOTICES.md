@@ -18,6 +18,6 @@ The website loads these files from its own `/fonts/` path. It makes no runtime r
 
 ## Package dependencies
 
-Runtime and development packages are installed from the npm registry at the exact versions in `package.json` and locked transitively in `pnpm-lock.yaml`. Their package metadata and licence files are authoritative for their individual terms. The direct packages are Svelte, SvelteKit, adapter-node, Vite, TypeScript, Vitest, Biome, Svelte Check, Playwright, Axe for Playwright, and Node.js type declarations. They are not relicensed under this repository's AGPL licence.
+Runtime and development packages are installed from the npm registry at the exact versions in `package.json` and locked transitively in `pnpm-lock.yaml`. Their package metadata and licence files are authoritative for their individual terms. The direct packages are Svelte, SvelteKit, adapter-node, Marked, Vite, TypeScript, Vitest, Biome, Svelte Check, Playwright, Axe for Playwright, and Node.js type declarations. They are not relicensed under this repository's AGPL licence.
 
 This notice must be updated in the same change that adds, removes, or materially changes a distributed third-party component.

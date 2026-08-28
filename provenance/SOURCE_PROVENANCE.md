@@ -8,6 +8,8 @@ Package manifests, lockfiles, configuration, documentation, licences, CI, and te
 
 Actual imports and adaptations are recorded in [source-receipts.json](source-receipts.json). Each receipt names its approved source path, SHA-256 at the pinned commit, use mode, and public destination. `verbatim` entries must remain byte-identical; adapted inputs and adaptation-only references are explicitly distinguished. Vendored third-party artifacts and their checksums are recorded separately in [third-party-assets.json](third-party-assets.json).
 
+The Learn corpus receipt batch covers the schema README and all 14 canonical Markdown inputs as byte-identical `verbatim` files. The generator, Learn layout, overview, and source tests are recorded as `adapted-input` because the public repository adds fail-closed route and URL validation, public-only integration, accessibility, and destination formatting. The 14 route components are intentionally absent from receipts because they are regenerated outputs, not copied source.
+
 Before importing a batch, pass every proposed source-relative path to:
 
 ```sh

@@ -114,7 +114,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 |---|---|---|---|---|
 | 1 | Clean repository and publication policy | Add README, SECURITY, CONTRIBUTING, licences, trademark notice, third-party notices, source provenance, clean package and configuration files, and the fail-closed source allow-list. | - | done |
 | 2 | Public-only site shell | Port tokens and required UI locally; implement theme handling, public navigation, footer, responsive shell, and a no-auth layout. | 1 | done |
-| 3 | Learn corpus | Import 14 canonical Learn Markdown pages and the deterministic generator; regenerate all 14 routes and preserve all 112 sections, URLs, voices, metadata, and review labels. | 2 | todo |
+| 3 | Learn corpus | Import 14 canonical Learn Markdown pages and the deterministic generator; regenerate all 14 routes and preserve all 112 sections, URLs, voices, metadata, and review labels. | 2 | done |
 | 4 | Blog and RSS | Import strict Markdown parsing, article routes, homepage latest-article integration, and RSS with safe rendering and deterministic ordering. | 2 | todo |
 | 5 | Public company pages | Port home, about, changelog, and licence after editorial and public-safety review; remove or neutralise links to excluded API, reports, and investigations routes and publish the selected licensing policy accurately. | 3, 4 | todo |
 | 6 | Verification and private CI | Add one-command verification, route and link tests, Playwright and Axe checks, secret and privacy scans, dependency audit, deterministic generation checks, and hosted CI in the private repository. | 3, 4, 5 | todo |

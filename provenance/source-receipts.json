@@ -4,6 +4,120 @@
   "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
   "receipts": [
     {
+      "sourcePath": "content/learn/README.md",
+      "sourceSha256": "7772b9557980d47aac9c33039b88b58ade3a61874a20f3855ce799b3532589f8",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/README.md"]
+    },
+    {
+      "sourcePath": "content/learn/frameworks.md",
+      "sourceSha256": "4d182564a00617202ffc52cd88659e79372e931b78b27f5144b689dfaf850e99",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/frameworks.md"]
+    },
+    {
+      "sourcePath": "content/learn/frameworks/ism.md",
+      "sourceSha256": "73e0f0b569cb88a7f53827fa0a0f263a834fb83a27cff7ddfeaba8483c05f0bb",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/frameworks/ism.md"]
+    },
+    {
+      "sourcePath": "content/learn/frameworks/ism/e8.md",
+      "sourceSha256": "aace47da538de342c3bed5380d68bf586a1de81f063126b362a970dbc7a95ab4",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/frameworks/ism/e8.md"]
+    },
+    {
+      "sourcePath": "content/learn/frameworks/ism/irap.md",
+      "sourceSha256": "9a93438962d641ec331b32cd3e76f5ee3053e394ab17b664db067a544338ef48",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/frameworks/ism/irap.md"]
+    },
+    {
+      "sourcePath": "content/learn/frameworks/nzism.md",
+      "sourceSha256": "be219b491522d49b72bf7c06ce7ee4678039b51cab14047ca6d024c7006f6afb",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/frameworks/nzism.md"]
+    },
+    {
+      "sourcePath": "content/learn/frameworks/picerl.md",
+      "sourceSha256": "ed106e7e131b6f35c88e655a7dcf31fefb00b811b750c6b812d45afa51d4ec3b",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/frameworks/picerl.md"]
+    },
+    {
+      "sourcePath": "content/learn/risk.md",
+      "sourceSha256": "dcfb2bbdacecd2e62558e7f19370324dcc3406a352ecea21439c1440cdfd0ac8",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/risk.md"]
+    },
+    {
+      "sourcePath": "content/learn/risk/methodology.md",
+      "sourceSha256": "46c38051b2a9a8eb264e17c53e8f1a2099f8eeba89c3294cf3acc69fa6a03e81",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/risk/methodology.md"]
+    },
+    {
+      "sourcePath": "content/learn/threat.md",
+      "sourceSha256": "de0d753c0d7a130ac296683274c73c659b26e466339dd865037ebbdedf758f8f",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/threat.md"]
+    },
+    {
+      "sourcePath": "content/learn/threat/mitre-attack.md",
+      "sourceSha256": "0093ca1428f502e891049243a3351f71ba7af8d57a90faa5b3dd3d3425b2b287",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/threat/mitre-attack.md"]
+    },
+    {
+      "sourcePath": "content/learn/threat/stix-taxii.md",
+      "sourceSha256": "d45ef5a99b5c4053cfa499328cb4e0a2113b4cef1fecaf97ff70604cf9dfbf2c",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/threat/stix-taxii.md"]
+    },
+    {
+      "sourcePath": "content/learn/vulnerability.md",
+      "sourceSha256": "afc90ba741acefbe7d64f338fafe14c6e021ef193385f48585614d83f463f978",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/vulnerability.md"]
+    },
+    {
+      "sourcePath": "content/learn/vulnerability/cvss.md",
+      "sourceSha256": "9c8ab78040b13418fc2013b33be39545319fc524396b7ad0f69158c3cd8b2846",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/vulnerability/cvss.md"]
+    },
+    {
+      "sourcePath": "content/learn/vulnerability/epss.md",
+      "sourceSha256": "0678fbfb13fe9e45d1c1e59a5f3e3c65f54af36c5cbf7e5b535512a936f2932b",
+      "mode": "verbatim",
+      "destinationPaths": ["content/learn/vulnerability/epss.md"]
+    },
+    {
+      "sourcePath": "scripts/generate-content.ts",
+      "sourceSha256": "dd95e99f3b1a3793f81ff1363bc9200d9d1bdc317d1feeb0f99f08508b2e3f46",
+      "mode": "adapted-input",
+      "destinationPaths": ["scripts/generate-content.ts"]
+    },
+    {
+      "sourcePath": "src/routes/learn/+layout.svelte",
+      "sourceSha256": "ba4b9b89a29ad60fd07666a411807dc5e5fee8fdd419009a6a18dd7ac11a6011",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/learn/+layout.svelte"]
+    },
+    {
+      "sourcePath": "src/routes/learn/+page.svelte",
+      "sourceSha256": "79104a1c31d670adcaaed572604de9d5f49f34316fa651f6097cc6c18e40cfe8",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/learn/+page.svelte"]
+    },
+    {
+      "sourcePath": "tests/content/generate-content.test.ts",
+      "sourceSha256": "fbd4e12245e8d95af64bf714980927467e97e385f61304993f20b95244d87c7d",
+      "mode": "adapted-input",
+      "destinationPaths": ["tests/content/generate-content.test.ts"]
+    },
+    {
       "sourcePath": "tokens/src/tokens.css",
       "sourceSha256": "6541d4bbb31777dcb3a716c26cf8a95607fdd1152056ca9d2cbd6ffa8fbbe729",
       "mode": "adapted-input",

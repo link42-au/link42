@@ -13,6 +13,7 @@
     "THIRD_PARTY_NOTICES.md",
     "TRADEMARKS.md",
     "biome.json",
+    "content/learn/**",
     "package.json",
     "playwright.config.ts",
     "pnpm-lock.yaml",
