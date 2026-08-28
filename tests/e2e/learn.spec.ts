@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import { expectConfiguredTheme, expectNoHorizontalOverflow } from "./support";
 
 const routes = [
   ["/learn", "Security Intelligence, Explained"],
@@ -20,13 +21,13 @@ const routes = [
 ] as const;
 
 test("every Learn route is browser-accessible and has safe metadata", async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== "desktop", "complete route inventory runs once on desktop");
-
   for (const [route, heading] of routes) {
     const response = await page.goto(route);
     expect(response?.status(), route).toBe(200);
     await expect(page.getByRole("heading", { level: 1, name: heading })).toBeVisible();
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://link42.app${route}`);
+    await expectConfiguredTheme(page, testInfo);
+    await expectNoHorizontalOverflow(page);
     const accessibility = await new AxeBuilder({ page }).analyze();
     expect(accessibility.violations, route).toEqual([]);
   }
@@ -54,9 +55,8 @@ test("Learn navigation and content remain accessible without horizontal overflow
   page,
 }, testInfo) => {
   await page.goto("/learn/frameworks/ism/irap");
-  expect(
-    await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth),
-  ).toBeLessThanOrEqual(0);
+  await expectConfiguredTheme(page, testInfo);
+  await expectNoHorizontalOverflow(page);
 
   const learnNavigation = page.getByRole("navigation", { name: "Learn topics" });
   if (testInfo.project.name.startsWith("mobile")) {

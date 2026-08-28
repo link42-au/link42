@@ -32,7 +32,22 @@
     "tokens/src/reset.css",
     "tokens/src/tokens.css"
   ],
-  "generatedNotCopied": ["src/routes/learn/**/+page.svelte"],
+  "generatedNotCopied": [
+    "src/routes/learn/frameworks/+page.svelte",
+    "src/routes/learn/frameworks/ism/+page.svelte",
+    "src/routes/learn/frameworks/ism/e8/+page.svelte",
+    "src/routes/learn/frameworks/ism/irap/+page.svelte",
+    "src/routes/learn/frameworks/nzism/+page.svelte",
+    "src/routes/learn/frameworks/picerl/+page.svelte",
+    "src/routes/learn/risk/+page.svelte",
+    "src/routes/learn/risk/methodology/+page.svelte",
+    "src/routes/learn/threat/+page.svelte",
+    "src/routes/learn/threat/mitre-attack/+page.svelte",
+    "src/routes/learn/threat/stix-taxii/+page.svelte",
+    "src/routes/learn/vulnerability/+page.svelte",
+    "src/routes/learn/vulnerability/cvss/+page.svelte",
+    "src/routes/learn/vulnerability/epss/+page.svelte"
+  ],
   "adaptationOnlyReferences": [
     "packages/ui/src/PlatformBar.svelte",
     "src/app.d.ts",

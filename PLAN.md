@@ -1,6 +1,6 @@
 # Link42 Website Plan
 
-Status: In Progress
+Status: Complete
 Source baseline: `wan0net/link42@aaa140cdd753d6576f0a2bf3292b31518b88fbcc`
 Destination: `link42-au/link42`
 Repository visibility: Private
@@ -117,7 +117,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 | 3 | Learn corpus | Import 14 canonical Learn Markdown pages and the deterministic generator; regenerate all 14 routes and preserve all 112 sections, URLs, voices, metadata, and review labels. | 2 | done |
 | 4 | Blog and RSS | Import strict Markdown parsing, article routes, homepage latest-article integration, and RSS with safe rendering and deterministic ordering. | 2 | done |
 | 5 | Public company pages | Port home, about, changelog, and licence after editorial and public-safety review; remove or neutralise links to excluded API, reports, and investigations routes and publish the selected licensing policy accurately. | 3, 4 | done |
-| 6 | Verification and private CI | Add one-command verification, route and link tests, Playwright and Axe checks, secret and privacy scans, dependency audit, deterministic generation checks, and hosted CI in the private repository. | 3, 4, 5 | todo |
+| 6 | Verification and private CI | Add one-command verification, route and link tests, Playwright and Axe checks, secret and privacy scans, dependency audit, deterministic generation checks, and hosted CI in the private repository. | 3, 4, 5 | done |
 
 One completed feature equals one tested commit and push. Do not start the next feature with uncommitted work.
 
@@ -141,8 +141,10 @@ One completed feature equals one tested commit and push. Do not start the next f
 ```bash
 pnpm generate:content --check
 pnpm check
+pnpm check:gitleaks
 pnpm test
 pnpm build
+pnpm check:routes
 pnpm test:e2e
 pnpm audit --prod --audit-level=high
 pnpm verify

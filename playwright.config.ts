@@ -17,16 +17,36 @@ export default defineConfig({
   },
   projects: [
     {
-      name: "desktop",
-      use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 900 } },
+      name: "desktop-light",
+      use: {
+        ...devices["Desktop Chrome"],
+        colorScheme: "light",
+        viewport: { width: 1280, height: 900 },
+      },
     },
     {
-      name: "mobile-320",
-      use: { ...devices["Desktop Chrome"], viewport: { width: 320, height: 720 } },
+      name: "desktop-dark",
+      use: {
+        ...devices["Desktop Chrome"],
+        colorScheme: "dark",
+        viewport: { width: 1280, height: 900 },
+      },
     },
     {
-      name: "mobile-375",
-      use: { ...devices["Desktop Chrome"], viewport: { width: 375, height: 812 } },
+      name: "mobile-light",
+      use: {
+        ...devices["Desktop Chrome"],
+        colorScheme: "light",
+        viewport: { width: 375, height: 812 },
+      },
+    },
+    {
+      name: "mobile-dark",
+      use: {
+        ...devices["Desktop Chrome"],
+        colorScheme: "dark",
+        viewport: { width: 375, height: 812 },
+      },
     },
   ],
 });

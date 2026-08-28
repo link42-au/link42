@@ -1,0 +1,529 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/wan0net/link42",
+  "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+  "receipts": [
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/blog/irap-assessed-not-certified-or-accredited.md",
+      "sourceBlobSha1": "264325c21325bf097d6f7e711b7f85ac3e0919da",
+      "sourceSha256": "d02820606573753c0dcd6873d933585f22738103b2f83c70765f9af20b32e073",
+      "destinationPath": "content/blog/irap-assessed-not-certified-or-accredited.md",
+      "destinationSha256": "d02820606573753c0dcd6873d933585f22738103b2f83c70765f9af20b32e073",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/README.md",
+      "sourceBlobSha1": "c1acbd48401fb3b9284428309f0ac7f5bb9a0abc",
+      "sourceSha256": "7772b9557980d47aac9c33039b88b58ade3a61874a20f3855ce799b3532589f8",
+      "destinationPath": "content/learn/README.md",
+      "destinationSha256": "7772b9557980d47aac9c33039b88b58ade3a61874a20f3855ce799b3532589f8",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks.md",
+      "sourceBlobSha1": "c9854fb605aa6624c2e2ce906edc4e6fb5f48e51",
+      "sourceSha256": "4d182564a00617202ffc52cd88659e79372e931b78b27f5144b689dfaf850e99",
+      "destinationPath": "content/learn/frameworks.md",
+      "destinationSha256": "4d182564a00617202ffc52cd88659e79372e931b78b27f5144b689dfaf850e99",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/ism.md",
+      "sourceBlobSha1": "a97d5c4e856e1d1be30bba58dc7d1d41f179749c",
+      "sourceSha256": "73e0f0b569cb88a7f53827fa0a0f263a834fb83a27cff7ddfeaba8483c05f0bb",
+      "destinationPath": "content/learn/frameworks/ism.md",
+      "destinationSha256": "73e0f0b569cb88a7f53827fa0a0f263a834fb83a27cff7ddfeaba8483c05f0bb",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/ism/e8.md",
+      "sourceBlobSha1": "910f03bd348ebdfb7214c8dbc04c2b0227e19348",
+      "sourceSha256": "aace47da538de342c3bed5380d68bf586a1de81f063126b362a970dbc7a95ab4",
+      "destinationPath": "content/learn/frameworks/ism/e8.md",
+      "destinationSha256": "aace47da538de342c3bed5380d68bf586a1de81f063126b362a970dbc7a95ab4",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/ism/irap.md",
+      "sourceBlobSha1": "a13649205f553ed8bfc07d7125b63b790ce27a1f",
+      "sourceSha256": "9a93438962d641ec331b32cd3e76f5ee3053e394ab17b664db067a544338ef48",
+      "destinationPath": "content/learn/frameworks/ism/irap.md",
+      "destinationSha256": "9a93438962d641ec331b32cd3e76f5ee3053e394ab17b664db067a544338ef48",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/nzism.md",
+      "sourceBlobSha1": "8426133684500e2c7a799eeb9f43fbe8a685902c",
+      "sourceSha256": "be219b491522d49b72bf7c06ce7ee4678039b51cab14047ca6d024c7006f6afb",
+      "destinationPath": "content/learn/frameworks/nzism.md",
+      "destinationSha256": "be219b491522d49b72bf7c06ce7ee4678039b51cab14047ca6d024c7006f6afb",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/picerl.md",
+      "sourceBlobSha1": "4d29b43292651ec98061f4b850397a9edac331cd",
+      "sourceSha256": "ed106e7e131b6f35c88e655a7dcf31fefb00b811b750c6b812d45afa51d4ec3b",
+      "destinationPath": "content/learn/frameworks/picerl.md",
+      "destinationSha256": "ed106e7e131b6f35c88e655a7dcf31fefb00b811b750c6b812d45afa51d4ec3b",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/risk.md",
+      "sourceBlobSha1": "234534d6e960b39b13fea07d9ac054b603cf5285",
+      "sourceSha256": "dcfb2bbdacecd2e62558e7f19370324dcc3406a352ecea21439c1440cdfd0ac8",
+      "destinationPath": "content/learn/risk.md",
+      "destinationSha256": "dcfb2bbdacecd2e62558e7f19370324dcc3406a352ecea21439c1440cdfd0ac8",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/risk/methodology.md",
+      "sourceBlobSha1": "a00aef396a3240f59c49dd6f0c360ed0152244ea",
+      "sourceSha256": "46c38051b2a9a8eb264e17c53e8f1a2099f8eeba89c3294cf3acc69fa6a03e81",
+      "destinationPath": "content/learn/risk/methodology.md",
+      "destinationSha256": "46c38051b2a9a8eb264e17c53e8f1a2099f8eeba89c3294cf3acc69fa6a03e81",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/threat.md",
+      "sourceBlobSha1": "cb89e70b9f7844734bc85f973439e637a4377477",
+      "sourceSha256": "de0d753c0d7a130ac296683274c73c659b26e466339dd865037ebbdedf758f8f",
+      "destinationPath": "content/learn/threat.md",
+      "destinationSha256": "de0d753c0d7a130ac296683274c73c659b26e466339dd865037ebbdedf758f8f",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/threat/mitre-attack.md",
+      "sourceBlobSha1": "00342eea88e81bf6e51752d34bb6e1045448181e",
+      "sourceSha256": "0093ca1428f502e891049243a3351f71ba7af8d57a90faa5b3dd3d3425b2b287",
+      "destinationPath": "content/learn/threat/mitre-attack.md",
+      "destinationSha256": "0093ca1428f502e891049243a3351f71ba7af8d57a90faa5b3dd3d3425b2b287",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/threat/stix-taxii.md",
+      "sourceBlobSha1": "f53142ec144fb45aa651b0ba6d26fd02a75f0f85",
+      "sourceSha256": "d45ef5a99b5c4053cfa499328cb4e0a2113b4cef1fecaf97ff70604cf9dfbf2c",
+      "destinationPath": "content/learn/threat/stix-taxii.md",
+      "destinationSha256": "d45ef5a99b5c4053cfa499328cb4e0a2113b4cef1fecaf97ff70604cf9dfbf2c",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/vulnerability.md",
+      "sourceBlobSha1": "b77c2dafcc3cf7c3faa1bbd676d4af0dd7b6a904",
+      "sourceSha256": "afc90ba741acefbe7d64f338fafe14c6e021ef193385f48585614d83f463f978",
+      "destinationPath": "content/learn/vulnerability.md",
+      "destinationSha256": "afc90ba741acefbe7d64f338fafe14c6e021ef193385f48585614d83f463f978",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/vulnerability/cvss.md",
+      "sourceBlobSha1": "c26217dd02f5af49a4ff38966ca174723d427388",
+      "sourceSha256": "9c8ab78040b13418fc2013b33be39545319fc524396b7ad0f69158c3cd8b2846",
+      "destinationPath": "content/learn/vulnerability/cvss.md",
+      "destinationSha256": "9c8ab78040b13418fc2013b33be39545319fc524396b7ad0f69158c3cd8b2846",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/vulnerability/epss.md",
+      "sourceBlobSha1": "0d941ebdb2ea20c9ff749495465b4921127359e9",
+      "sourceSha256": "0678fbfb13fe9e45d1c1e59a5f3e3c65f54af36c5cbf7e5b535512a936f2932b",
+      "destinationPath": "content/learn/vulnerability/epss.md",
+      "destinationSha256": "0678fbfb13fe9e45d1c1e59a5f3e3c65f54af36c5cbf7e5b535512a936f2932b",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "scripts/generate-content.ts",
+      "sourceBlobSha1": "6089fa856c725c4dd2eeb6e459ab8c6e10e75467",
+      "sourceSha256": "dd95e99f3b1a3793f81ff1363bc9200d9d1bdc317d1feeb0f99f08508b2e3f46",
+      "destinationPath": "scripts/generate-content.ts",
+      "destinationSha256": "36ef887c787f00848cea2cdf98c543792c32b6fa153a07f900ceee354890b887",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/lib/server/blog.ts",
+      "sourceBlobSha1": "233442885d0ba8bc232acf12d0d10da60b8368e8",
+      "sourceSha256": "ff78e2ba7ed45adfdf719e76e10c080e24b87b2d2d4a3b2601ee147f5ccb1123",
+      "destinationPath": "src/lib/server/blog.ts",
+      "destinationSha256": "3b195b6ced1d978f3ac4cc20598a6c8b1233913abcb091adcc208e77f2319c09",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/+page.server.ts",
+      "sourceBlobSha1": "7c34578cce5aa658258a432ce51e8e51672921e6",
+      "sourceSha256": "dc4fafb188babd7ee246dd946f82af2761960a5a9afa030f7350ed3827e7dbd6",
+      "destinationPath": "src/routes/+page.server.ts",
+      "destinationSha256": "650c72ec4ad141ad6fdafa0f468aad4befa0c28dfc14adf7512fd14bb758f26a",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/+page.svelte",
+      "sourceBlobSha1": "4e24ddfba603a102cc43fc3f0c2005a8a2683fe7",
+      "sourceSha256": "913800f6ef7784cc756014fe1a94033f3d4acfe4cebf0b697a4ba7ab71c50338",
+      "destinationPath": "src/routes/+page.svelte",
+      "destinationSha256": "dafb6cf3432975838734308b79b8da891836c125d31b296495800af2aedf9d5f",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/about/+page.svelte",
+      "sourceBlobSha1": "0d5ba7eaeec5cdeb6abe16a96adc266949b15d95",
+      "sourceSha256": "7e056c832f376f7ba1bc704a8b920db1aa61edf925b0286aabbd5e6c759b8fdf",
+      "destinationPath": "src/routes/about/+page.svelte",
+      "destinationSha256": "53349019d7b2c7210e4edef1954fcc56c19a2bf914474bf55b7c3127fd750436",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/changelog/+page.svelte",
+      "sourceBlobSha1": "06ed61270887c8faf3f7919f3af8066c70fb49a3",
+      "sourceSha256": "9ba4ff3c0245e1039d397fcadf9068b1675b42c8505c70c7bbc731026184e9d4",
+      "destinationPath": "src/routes/changelog/+page.svelte",
+      "destinationSha256": "175220acd98396ac4efef4ee209e827a240f091dfec40c6aa2bf30005af736ca",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/licence/+page.svelte",
+      "sourceBlobSha1": "13d53115c8c7de98b2e76f4e992a5df0425a52d9",
+      "sourceSha256": "b6d7794ef715d28f1dd2e74b12c64a7349abdfc405bafe3f6d9ebaccd194e96f",
+      "destinationPath": "src/routes/licence/+page.svelte",
+      "destinationSha256": "bd8c8322d8f45164ac2a7758f8e360d6e6e8ec1645488e6db4486caa64cc3200",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/blog/+page.server.ts",
+      "sourceBlobSha1": "d27fa829effb915604ef230847ae263eb277bfc5",
+      "sourceSha256": "038ac909c56fb5e805049efa4ed0c0bd8074c431230aca34a67e5a75b3f0c7c4",
+      "destinationPath": "src/routes/blog/+page.server.ts",
+      "destinationSha256": "dba15874a86188ea09976c25e5daf8be831c880b2431d32d0d422e7f2173c7b0",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/blog/+page.svelte",
+      "sourceBlobSha1": "86c5f73e6477bd51d97c95e190990b987c618be0",
+      "sourceSha256": "6b2fc749deaf1c964f163cf432719e35d1e0e5e5714498f98aa038dad0c10025",
+      "destinationPath": "src/routes/blog/+page.svelte",
+      "destinationSha256": "fbd0e969849dc15994c5c6bfe3f8acc34d9143aeb1efd32ffec9d3b34cefc3af",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/blog/[slug]/+page.server.ts",
+      "sourceBlobSha1": "4c0855bf8bd9fcc32adef3c4738886150c7888e0",
+      "sourceSha256": "2b3679d12b5b66ca54b3f4bdafd07e7fe238b5ec2a6ca618f6573db6a8ecc883",
+      "destinationPath": "src/routes/blog/[slug]/+page.server.ts",
+      "destinationSha256": "4cede01b0caeeae26c5e632bd335aac7535265b2fe5a1cfc43217f524f9babe4",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/blog/[slug]/+page.svelte",
+      "sourceBlobSha1": "fbc51faaefa5773ec942eaf074c1e10f9fb96b26",
+      "sourceSha256": "7d78751004f0134cb841bd9a111e5925632f71e9693370ef0559d01a1b46c0ba",
+      "destinationPath": "src/routes/blog/[slug]/+page.svelte",
+      "destinationSha256": "19cb1f95957b5a3b8f14c76b411d3a9aab88a9aff480e1c92d53f7cca990edfc",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/blog/rss.xml/+server.ts",
+      "sourceBlobSha1": "2dacd931c9cb4e22d4dcd69c86536259412e5cb7",
+      "sourceSha256": "28340959f557fbcf2f983a94296781df8644754617cff037cc81d97af7a70c1b",
+      "destinationPath": "src/routes/blog/rss.xml/+server.ts",
+      "destinationSha256": "2446626d4a1fdff22dca6a72dc17e8bb0851a0acc3a674ccdf4f4d125adf1b06",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/learn/+layout.svelte",
+      "sourceBlobSha1": "cf1615ac5f9d1a0cc165b19d20da6c767ed51258",
+      "sourceSha256": "ba4b9b89a29ad60fd07666a411807dc5e5fee8fdd419009a6a18dd7ac11a6011",
+      "destinationPath": "src/routes/learn/+layout.svelte",
+      "destinationSha256": "49af33fc2ca4b4dc2b89fbc45c4a6840b41418728c953e680be4aae80bd334a6",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/learn/+page.svelte",
+      "sourceBlobSha1": "c2c9edf8abca7caa3db085266cea7a129f44062b",
+      "sourceSha256": "79104a1c31d670adcaaed572604de9d5f49f34316fa651f6097cc6c18e40cfe8",
+      "destinationPath": "src/routes/learn/+page.svelte",
+      "destinationSha256": "0e365bb785ccadbceb8e6dba5d4dbc57673faf9eefa31dbfc1c46492c6c49a14",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "tests/content/blog.test.ts",
+      "sourceBlobSha1": "603283c2bc23e82f5568b0f92364fb62917b4a30",
+      "sourceSha256": "3db0a2250d8c40f7d72772fe92a8d196f516c6fd36043a482700fd5cd348e804",
+      "destinationPath": "tests/content/blog.test.ts",
+      "destinationSha256": "7ede11a3b2bc8e0f5e66796973044b7db5a764ab2283cee6d6b8f4709861f5c7",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "tests/content/generate-content.test.ts",
+      "sourceBlobSha1": "3fb64ca498c24d576f9e56569f1072ad865f971b",
+      "sourceSha256": "fbd4e12245e8d95af64bf714980927467e97e385f61304993f20b95244d87c7d",
+      "destinationPath": "tests/content/generate-content.test.ts",
+      "destinationSha256": "765870b351718af2b9099c591c580641559394e293576ff3315ed2cc9db863e1",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "tokens/src/tokens.css",
+      "sourceBlobSha1": "592ca1ff8980ee8589862df67bd694e75ca63574",
+      "sourceSha256": "6541d4bbb31777dcb3a716c26cf8a95607fdd1152056ca9d2cbd6ffa8fbbe729",
+      "destinationPath": "src/lib/styles/app.css",
+      "destinationSha256": "d3d82f2a0d4a8ea107dbaad6b88f2dc1d8e83b12728d69a8a2386bbdff4a7268",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "tokens/src/reset.css",
+      "sourceBlobSha1": "2b6de211ba1ac104f6cd57904e8061e37b033096",
+      "sourceSha256": "fd33851256b4f43dead6b5700709db74f9a915d61fd41563a39c3b3b04acef74",
+      "destinationPath": "src/lib/styles/app.css",
+      "destinationSha256": "d3d82f2a0d4a8ea107dbaad6b88f2dc1d8e83b12728d69a8a2386bbdff4a7268",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "packages/ui/src/components.css",
+      "sourceBlobSha1": "44123034521a64ac49479aeee64c343cef7627c2",
+      "sourceSha256": "dcf777af6be430a0a6a8e780787ced0916cb9fe2c3ea26294439c36c8c4504bd",
+      "destinationPath": "src/lib/styles/app.css",
+      "destinationSha256": "d3d82f2a0d4a8ea107dbaad6b88f2dc1d8e83b12728d69a8a2386bbdff4a7268",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/brand.css",
+      "sourceBlobSha1": "9e102e77fd6a0b5dd2e9390ea6e56fc321f2e70c",
+      "sourceSha256": "d6734e955586e616f46588ee157fb65a9eaaaf71c81bb5365e98eb67377e7beb",
+      "destinationPath": "src/lib/styles/app.css",
+      "destinationSha256": "d3d82f2a0d4a8ea107dbaad6b88f2dc1d8e83b12728d69a8a2386bbdff4a7268",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "packages/ui/src/Footer.svelte",
+      "sourceBlobSha1": "3f9c68d7d6199bd5c887d9a57afcbe1773600e7e",
+      "sourceSha256": "73f92bf66f95873f4e207e9633814158710fad9b07e195e54d96d6253955deea",
+      "destinationPath": "src/lib/components/SiteFooter.svelte",
+      "destinationSha256": "5864c4d0f4b62af21bb5483b222b02e582db81b658d182c7cdba41535a0b11c4",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "packages/ui/src/PlatformBar.svelte",
+      "sourceBlobSha1": "1b55fa82c2b45bb642f2133652dac677408dce28",
+      "sourceSha256": "24c4311b1376191cab4a7b29015fcb70fc616189ca1d7b7db50f9c69978606b3",
+      "destinationPath": "src/lib/components/SiteHeader.svelte",
+      "destinationSha256": "bee189a1cc19e8e6485fbba9d2ddb21636f9bec3a321c30c3432dee01a20266e",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "packages/ui/src/theme.svelte.ts",
+      "sourceBlobSha1": "95a0375a2b9a9439b17bdc65ff47f8066865368d",
+      "sourceSha256": "6acef62519f59e1aabbe2d196ad0d98808450cac68401ae4ace1721516a93116",
+      "destinationPath": "src/lib/theme.ts",
+      "destinationSha256": "8ee687ea7adad5fffb5223738b6cef0bb2743fb25464b68364f9a8d7b8e4bed2",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/app.html",
+      "sourceBlobSha1": "2565cee177f0ff50e58d606e0a79a78812b71989",
+      "sourceSha256": "7d33831fc21500c9c9b436cbee89be21c7909b90c21c7cc8ec40b4027dd620b0",
+      "destinationPath": "src/app.html",
+      "destinationSha256": "56596be64b2953fcc2cc3e51ea1665316e4f6adad6ad02d54711939834b56cf3",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "src/routes/+error.svelte",
+      "sourceBlobSha1": "28182a0b83ee17e574cdfd471a2e330c4c49796b",
+      "sourceSha256": "5f5682521990d5c682094fd086812777a88dc24ce8039d13815265f0eb6c4ebf",
+      "destinationPath": "src/routes/+error.svelte",
+      "destinationSha256": "9b5c872d5e174a519f7865e9b0ccd6b21c10cc085c3e9eaa79f474f0a56af2be",
+      "mode": "adapted"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "static/favicon.svg",
+      "sourceBlobSha1": "44dde71f8c6776206a05044783edc6171993cf6c",
+      "sourceSha256": "99b55b3a30682b1ad5cb6daf18b2d4053184ed6bc0195529f970f1b8baec3148",
+      "destinationPath": "static/favicon.svg",
+      "destinationSha256": "99b55b3a30682b1ad5cb6daf18b2d4053184ed6bc0195529f970f1b8baec3148",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "static/logo-dark.svg",
+      "sourceBlobSha1": "cb567c423747ebe376276d2463b52e6a3e6705c6",
+      "sourceSha256": "02702e22e4b1bf310f966d512d3ea065eb00e193e9cade88ca0baf399426f3c1",
+      "destinationPath": "static/logo-dark.svg",
+      "destinationSha256": "02702e22e4b1bf310f966d512d3ea065eb00e193e9cade88ca0baf399426f3c1",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "static/logo-light.svg",
+      "sourceBlobSha1": "61fc17fdf868c23bd30d16008126ea684d09ba55",
+      "sourceSha256": "9e58eef7737270939c3ec5b82a073846443017c42231a53f4735da1db4d1bc2c",
+      "destinationPath": "static/logo-light.svg",
+      "destinationSha256": "9e58eef7737270939c3ec5b82a073846443017c42231a53f4735da1db4d1bc2c",
+      "mode": "copied"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks.md",
+      "sourceBlobSha1": "c9854fb605aa6624c2e2ce906edc4e6fb5f48e51",
+      "sourceSha256": "4d182564a00617202ffc52cd88659e79372e931b78b27f5144b689dfaf850e99",
+      "destinationPath": "src/routes/learn/frameworks/+page.svelte",
+      "destinationSha256": "83139ab396bc3bfb036f9ee83d827943f6dbbf3338d2d900b6ac700a6ee457fd",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/ism.md",
+      "sourceBlobSha1": "a97d5c4e856e1d1be30bba58dc7d1d41f179749c",
+      "sourceSha256": "73e0f0b569cb88a7f53827fa0a0f263a834fb83a27cff7ddfeaba8483c05f0bb",
+      "destinationPath": "src/routes/learn/frameworks/ism/+page.svelte",
+      "destinationSha256": "45285e0e3f90ae12018a4eb4433d153701fb5e9b81a5be44d243e6ff975e7ff1",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/ism/e8.md",
+      "sourceBlobSha1": "910f03bd348ebdfb7214c8dbc04c2b0227e19348",
+      "sourceSha256": "aace47da538de342c3bed5380d68bf586a1de81f063126b362a970dbc7a95ab4",
+      "destinationPath": "src/routes/learn/frameworks/ism/e8/+page.svelte",
+      "destinationSha256": "ffc0a4ad218a03a2b0d7226e1be0738c2e4619dd30aa7be2b0b9934d272e979d",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/ism/irap.md",
+      "sourceBlobSha1": "a13649205f553ed8bfc07d7125b63b790ce27a1f",
+      "sourceSha256": "9a93438962d641ec331b32cd3e76f5ee3053e394ab17b664db067a544338ef48",
+      "destinationPath": "src/routes/learn/frameworks/ism/irap/+page.svelte",
+      "destinationSha256": "af51e91e600f5463a7b0464b9486fb9c5455f84b3ac92589102e6b02aa4912a7",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/nzism.md",
+      "sourceBlobSha1": "8426133684500e2c7a799eeb9f43fbe8a685902c",
+      "sourceSha256": "be219b491522d49b72bf7c06ce7ee4678039b51cab14047ca6d024c7006f6afb",
+      "destinationPath": "src/routes/learn/frameworks/nzism/+page.svelte",
+      "destinationSha256": "0ab9ade4e6b4947ae205bf4f5d9ca1026794039d181efea7ff8fa8731308668c",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/frameworks/picerl.md",
+      "sourceBlobSha1": "4d29b43292651ec98061f4b850397a9edac331cd",
+      "sourceSha256": "ed106e7e131b6f35c88e655a7dcf31fefb00b811b750c6b812d45afa51d4ec3b",
+      "destinationPath": "src/routes/learn/frameworks/picerl/+page.svelte",
+      "destinationSha256": "9ac54d036b74fd3cbf67ff3e43d25c8dd485bb5e7fdb0e48df4a5494c575a8a8",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/risk.md",
+      "sourceBlobSha1": "234534d6e960b39b13fea07d9ac054b603cf5285",
+      "sourceSha256": "dcfb2bbdacecd2e62558e7f19370324dcc3406a352ecea21439c1440cdfd0ac8",
+      "destinationPath": "src/routes/learn/risk/+page.svelte",
+      "destinationSha256": "06440216079456e240cb0e393afcc6fedf8c2578cef5a8d660e6c96a70a7d4e5",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/risk/methodology.md",
+      "sourceBlobSha1": "a00aef396a3240f59c49dd6f0c360ed0152244ea",
+      "sourceSha256": "46c38051b2a9a8eb264e17c53e8f1a2099f8eeba89c3294cf3acc69fa6a03e81",
+      "destinationPath": "src/routes/learn/risk/methodology/+page.svelte",
+      "destinationSha256": "65d7078cb727d9e4978da8fed027600e90aee653f1fa984786f6aafbf54df901",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/threat.md",
+      "sourceBlobSha1": "cb89e70b9f7844734bc85f973439e637a4377477",
+      "sourceSha256": "de0d753c0d7a130ac296683274c73c659b26e466339dd865037ebbdedf758f8f",
+      "destinationPath": "src/routes/learn/threat/+page.svelte",
+      "destinationSha256": "559ffae6dcbe3c1c08d9c63d40755a4901bb0077ac9df40f691f4b744bb23d9b",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/threat/mitre-attack.md",
+      "sourceBlobSha1": "00342eea88e81bf6e51752d34bb6e1045448181e",
+      "sourceSha256": "0093ca1428f502e891049243a3351f71ba7af8d57a90faa5b3dd3d3425b2b287",
+      "destinationPath": "src/routes/learn/threat/mitre-attack/+page.svelte",
+      "destinationSha256": "e15756e4ded9d09efb1c89cc769ad53f6ad3ada804fcedcfb9d490d4afc35ce3",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/threat/stix-taxii.md",
+      "sourceBlobSha1": "f53142ec144fb45aa651b0ba6d26fd02a75f0f85",
+      "sourceSha256": "d45ef5a99b5c4053cfa499328cb4e0a2113b4cef1fecaf97ff70604cf9dfbf2c",
+      "destinationPath": "src/routes/learn/threat/stix-taxii/+page.svelte",
+      "destinationSha256": "409fdce2dcb40558d5ee5a18f7c2722dc815de3ddd2c3f93ae2d2c2a9bb9a0a1",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/vulnerability.md",
+      "sourceBlobSha1": "b77c2dafcc3cf7c3faa1bbd676d4af0dd7b6a904",
+      "sourceSha256": "afc90ba741acefbe7d64f338fafe14c6e021ef193385f48585614d83f463f978",
+      "destinationPath": "src/routes/learn/vulnerability/+page.svelte",
+      "destinationSha256": "6abbd935cdece6d55cde81fef8844205c8bc24724f32edf07246f05148ee0482",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/vulnerability/cvss.md",
+      "sourceBlobSha1": "c26217dd02f5af49a4ff38966ca174723d427388",
+      "sourceSha256": "9c8ab78040b13418fc2013b33be39545319fc524396b7ad0f69158c3cd8b2846",
+      "destinationPath": "src/routes/learn/vulnerability/cvss/+page.svelte",
+      "destinationSha256": "995dd5818b8de4b68dffeae00783460d7a59a73380d699a1802687275683f6c4",
+      "mode": "generated"
+    },
+    {
+      "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
+      "sourcePath": "content/learn/vulnerability/epss.md",
+      "sourceBlobSha1": "0d941ebdb2ea20c9ff749495465b4921127359e9",
+      "sourceSha256": "0678fbfb13fe9e45d1c1e59a5f3e3c65f54af36c5cbf7e5b535512a936f2932b",
+      "destinationPath": "src/routes/learn/vulnerability/epss/+page.svelte",
+      "destinationSha256": "920428377f813f112854f538cd45495e74747e406afa3eb9ebfde825e32beb41",
+      "mode": "generated"
+    }
+  ]
+}

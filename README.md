@@ -10,13 +10,27 @@ Requirements:
 
 - Node.js 22
 - pnpm 10.15.1
+- Gitleaks 8.30.1
 
-Install the locked toolchain and run the repository-policy checks:
+Install the locked JavaScript dependencies. The Gitleaks prerequisite can be
+installed into a user-local cache from the checksum-pinned upstream archive:
 
 ```sh
 pnpm install --frozen-lockfile
+pnpm check:gitleaks --install --check-only
 pnpm verify
 ```
+
+`pnpm verify` is the complete local and hosted gate. It checks deterministic
+content generation, source manifests and import receipts, the exact public-tree
+allow-list, privacy identifiers, the working tree and complete independent Git
+history for secrets, formatting, types, unit tests, the production build, every
+included and excluded route, internal links, desktop/mobile accessibility in
+light and dark themes, and high-severity production dependency advisories.
+
+Route and internal-link verification starts the built website only on loopback.
+It validates external HTTPS link syntax but deliberately does not fetch external
+URLs. CI uses the same command with read-only repository access and no secrets.
 
 The source manifest is pinned to a single private-source commit. A path not explicitly listed in that manifest is rejected by default. See [provenance/SOURCE_PROVENANCE.md](provenance/SOURCE_PROVENANCE.md) before importing any material.
 

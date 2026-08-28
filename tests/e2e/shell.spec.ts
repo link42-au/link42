@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import { configuredTheme, expectConfiguredTheme, expectNoHorizontalOverflow } from "./support";
 
 test("shell is responsive, local-only and accessible", async ({ page }, testInfo) => {
   const remoteRequests: string[] = [];
@@ -12,6 +13,7 @@ test("shell is responsive, local-only and accessible", async ({ page }, testInfo
 
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
+  await expectConfiguredTheme(page, testInfo);
   await expect(page.getByRole("heading", { name: /Security tooling that starts useful/ })).toBeVisible();
   await expect(page.getByRole("link", { name: "Link42 home" })).toBeVisible();
   await expect(page.getByRole("link", { name: /Open Rule1/ }).first()).toHaveAttribute(
@@ -23,8 +25,7 @@ test("shell is responsive, local-only and accessible", async ({ page }, testInfo
     "https://github.com/link42-au/link42",
   );
 
-  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-  expect(overflow).toBeLessThanOrEqual(0);
+  await expectNoHorizontalOverflow(page);
 
   if (testInfo.project.name.startsWith("mobile")) {
     const menu = page.locator('button[aria-controls="site-navigation"]');
@@ -48,15 +49,17 @@ test("shell is responsive, local-only and accessible", async ({ page }, testInfo
   expect(remoteRequests).toEqual([]);
 });
 
-test("theme switch is labelled and persists", async ({ page }) => {
-  await page.emulateMedia({ colorScheme: "light" });
+test("theme switch is labelled and persists", async ({ page }, testInfo) => {
   await page.goto("/");
-  const toggle = page.getByRole("button", { name: "Switch to dark theme" });
+  const initialTheme = configuredTheme(testInfo);
+  const selectedTheme = initialTheme === "light" ? "dark" : "light";
+  await expectConfiguredTheme(page, testInfo);
+  const toggle = page.getByRole("button", { name: `Switch to ${selectedTheme} theme` });
   await toggle.click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
-  await expect(page.getByRole("button", { name: "Switch to light theme" })).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", selectedTheme);
+  await expect(page.getByRole("button", { name: `Switch to ${initialTheme} theme` })).toBeVisible();
   await page.reload();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", selectedTheme);
   const accessibility = await new AxeBuilder({ page }).analyze();
   expect(accessibility.violations).toEqual([]);
 });
@@ -70,7 +73,8 @@ test("skip link reaches main content", async ({ page }) => {
   await expect(page.locator("#main-content")).toBeFocused();
 });
 
-test("excluded routes remain absent", async ({ request }) => {
+test("excluded routes remain absent", async ({ request }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop-light", "HTTP route checks run once on desktop");
   for (const route of ["/api", "/api/example", "/reports/example", "/investigations/example"]) {
     const response = await request.get(route);
     expect(response.status(), route).toBe(404);

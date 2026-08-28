@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import { expectConfiguredTheme, expectNoHorizontalOverflow } from "./support";
 
 const companyPages = [
   {
@@ -32,8 +33,7 @@ const companyPages = [
 ] as const;
 
 for (const companyPage of companyPages) {
-  test(`${companyPage.route} is accessible in light and dark themes`, async ({ page }) => {
-    await page.emulateMedia({ colorScheme: "light" });
+  test(`${companyPage.route} is accessible in its configured theme`, async ({ page }, testInfo) => {
     const response = await page.goto(companyPage.route);
     expect(response?.status()).toBe(200);
     await expect(page).toHaveTitle(companyPage.title);
@@ -47,9 +47,8 @@ for (const companyPage of companyPages) {
       `https://link42.app${companyPage.route === "/" ? "" : companyPage.route}`,
     );
 
-    expect(
-      await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth),
-    ).toBeLessThanOrEqual(0);
+    await expectConfiguredTheme(page, testInfo);
+    await expectNoHorizontalOverflow(page);
     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
 
     const firstMainLink = page.locator("main a").first();
@@ -61,18 +60,11 @@ for (const companyPage of companyPages) {
         return style.outlineStyle !== "none" && Number.parseFloat(style.outlineWidth) > 0;
       }),
     ).toBe(true);
-
-    await page.getByRole("button", { name: "Switch to dark theme" }).click();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
-    expect(
-      await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth),
-    ).toBeLessThanOrEqual(0);
-    expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   });
 }
 
 test("company pages use durable links and never link excluded routes", async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== "desktop", "link inventory runs once on desktop");
+  test.skip(testInfo.project.name !== "desktop-light", "link inventory runs once on desktop");
 
   const seen = new Set<string>();
   for (const companyPage of companyPages) {
@@ -94,7 +86,7 @@ test("company pages use durable links and never link excluded routes", async ({ 
 });
 
 test("excluded route families return 404", async ({ request }, testInfo) => {
-  test.skip(testInfo.project.name !== "desktop", "HTTP route checks run once on desktop");
+  test.skip(testInfo.project.name !== "desktop-light", "HTTP route checks run once on desktop");
 
   for (const route of [
     "/api",
