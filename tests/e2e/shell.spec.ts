@@ -65,6 +65,40 @@ test("theme switch is labelled and persists", async ({ page }, testInfo) => {
   expect(accessibility.violations).toEqual([]);
 });
 
+test("secondary navigation is centred on desktop and reachable on mobile", async ({ page }, testInfo) => {
+  const isMobile = testInfo.project.name.startsWith("mobile-");
+  if (isMobile) {
+    await page.setViewportSize({ width: 320, height: 812 });
+  }
+
+  await page.goto("/about");
+  const navigation = page.getByRole("navigation", { name: "Site navigation" });
+  const navigationInner = navigation.locator(".site-nav-inner");
+  const links = navigation.getByRole("link");
+
+  if (isMobile) {
+    const firstLink = links.first();
+    const firstLinkBox = await firstLink.boundingBox();
+    expect(firstLinkBox).not.toBeNull();
+    expect(firstLinkBox?.x).toBeCloseTo(16, 0);
+    await expect(navigationInner).toHaveCSS("justify-content", "flex-start");
+    await expect(navigationInner).toHaveCSS("overflow-x", "auto");
+    expect(await navigationInner.evaluate((element) => element.scrollWidth)).toBeGreaterThan(
+      await navigationInner.evaluate((element) => element.clientWidth),
+    );
+  } else {
+    const firstLinkBox = await links.first().boundingBox();
+    const lastLinkBox = await links.last().boundingBox();
+    expect(firstLinkBox).not.toBeNull();
+    expect(lastLinkBox).not.toBeNull();
+    const groupCentre = ((firstLinkBox?.x ?? 0) + (lastLinkBox?.x ?? 0) + (lastLinkBox?.width ?? 0)) / 2;
+    expect(groupCentre).toBeCloseTo(640, 0);
+    await expect(navigationInner).toHaveCSS("justify-content", "center");
+  }
+
+  await expectNoHorizontalOverflow(page);
+});
+
 test("skip link reaches main content", async ({ page }) => {
   await page.goto("/");
   await page.keyboard.press("Tab");
