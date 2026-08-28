@@ -13,7 +13,7 @@ export const validatePortableRelativePath = (value, { allowGlob = false } = {}) 
   if (value.includes("\\") || path.posix.isAbsolute(value)) {
     throw new Error(`path must be portable and relative: ${value}`);
   }
-  if (!allowGlob && /[*?[]/.test(value)) {
+  if (!allowGlob && /[*?]/.test(value)) {
     throw new Error(`concrete path must not contain glob syntax: ${value}`);
   }
   const segments = value.split("/");

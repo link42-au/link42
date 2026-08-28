@@ -4,6 +4,12 @@
   "sourceCommit": "aaa140cdd753d6576f0a2bf3292b31518b88fbcc",
   "receipts": [
     {
+      "sourcePath": "content/blog/irap-assessed-not-certified-or-accredited.md",
+      "sourceSha256": "d02820606573753c0dcd6873d933585f22738103b2f83c70765f9af20b32e073",
+      "mode": "verbatim",
+      "destinationPaths": ["content/blog/irap-assessed-not-certified-or-accredited.md"]
+    },
+    {
       "sourcePath": "content/learn/README.md",
       "sourceSha256": "7772b9557980d47aac9c33039b88b58ade3a61874a20f3855ce799b3532589f8",
       "mode": "verbatim",
@@ -100,6 +106,54 @@
       "destinationPaths": ["scripts/generate-content.ts"]
     },
     {
+      "sourcePath": "src/lib/server/blog.ts",
+      "sourceSha256": "ff78e2ba7ed45adfdf719e76e10c080e24b87b2d2d4a3b2601ee147f5ccb1123",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/lib/server/blog.ts"]
+    },
+    {
+      "sourcePath": "src/routes/+page.server.ts",
+      "sourceSha256": "dc4fafb188babd7ee246dd946f82af2761960a5a9afa030f7350ed3827e7dbd6",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/+page.server.ts"]
+    },
+    {
+      "sourcePath": "src/routes/+page.svelte",
+      "sourceSha256": "913800f6ef7784cc756014fe1a94033f3d4acfe4cebf0b697a4ba7ab71c50338",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/+page.svelte"]
+    },
+    {
+      "sourcePath": "src/routes/blog/+page.server.ts",
+      "sourceSha256": "038ac909c56fb5e805049efa4ed0c0bd8074c431230aca34a67e5a75b3f0c7c4",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/blog/+page.server.ts"]
+    },
+    {
+      "sourcePath": "src/routes/blog/+page.svelte",
+      "sourceSha256": "6b2fc749deaf1c964f163cf432719e35d1e0e5e5714498f98aa038dad0c10025",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/blog/+page.svelte"]
+    },
+    {
+      "sourcePath": "src/routes/blog/[slug]/+page.server.ts",
+      "sourceSha256": "2b3679d12b5b66ca54b3f4bdafd07e7fe238b5ec2a6ca618f6573db6a8ecc883",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/blog/[slug]/+page.server.ts"]
+    },
+    {
+      "sourcePath": "src/routes/blog/[slug]/+page.svelte",
+      "sourceSha256": "7d78751004f0134cb841bd9a111e5925632f71e9693370ef0559d01a1b46c0ba",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/blog/[slug]/+page.svelte"]
+    },
+    {
+      "sourcePath": "src/routes/blog/rss.xml/+server.ts",
+      "sourceSha256": "28340959f557fbcf2f983a94296781df8644754617cff037cc81d97af7a70c1b",
+      "mode": "adapted-input",
+      "destinationPaths": ["src/routes/blog/rss.xml/+server.ts"]
+    },
+    {
       "sourcePath": "src/routes/learn/+layout.svelte",
       "sourceSha256": "ba4b9b89a29ad60fd07666a411807dc5e5fee8fdd419009a6a18dd7ac11a6011",
       "mode": "adapted-input",
@@ -110,6 +164,12 @@
       "sourceSha256": "79104a1c31d670adcaaed572604de9d5f49f34316fa651f6097cc6c18e40cfe8",
       "mode": "adapted-input",
       "destinationPaths": ["src/routes/learn/+page.svelte"]
+    },
+    {
+      "sourcePath": "tests/content/blog.test.ts",
+      "sourceSha256": "3db0a2250d8c40f7d72772fe92a8d196f516c6fd36043a482700fd5cd348e804",
+      "mode": "adapted-input",
+      "destinationPaths": ["tests/content/blog.test.ts"]
     },
     {
       "sourcePath": "tests/content/generate-content.test.ts",

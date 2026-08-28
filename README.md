@@ -30,6 +30,6 @@ The private `wan0net/link42` repository remains private and independent. This re
 
 Software in this repository is licensed under the [GNU Affero General Public License v3.0 only](LICENSE), identified by the SPDX expression `AGPL-3.0-only`.
 
-Original editorial content expressly identified as such is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/), identified by `CC-BY-NC-4.0`. Third-party material remains under its original terms. The Link42 name, logos, and other brand assets are reserved and are not licensed under either licence. See [COPYRIGHT.md](COPYRIGHT.md), [TRADEMARKS.md](TRADEMARKS.md), and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Original editorial content under `content/blog/**` and `content/learn/**` is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/), identified by `CC-BY-NC-4.0`. Third-party material remains under its original terms. The Link42 name, logos, and other brand assets are reserved and are not licensed under either licence. See [COPYRIGHT.md](COPYRIGHT.md), [TRADEMARKS.md](TRADEMARKS.md), and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Copyright © 2026 Iain Dickson.

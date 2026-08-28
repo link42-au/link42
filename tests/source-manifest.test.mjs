@@ -7,6 +7,7 @@ import {
   EXPECTED_SOURCE_COMMIT,
   EXPECTED_SOURCE_REPOSITORY,
   matchesAny,
+  validatePortableRelativePath,
   validateSourceManifest,
 } from "../scripts/lib/policy.mjs";
 
@@ -52,6 +53,15 @@ test("glob matching does not widen across path segments", () => {
   assert.equal(matchesAny("content/blog/post.md", ["content/blog/*.md"]), true);
   assert.equal(matchesAny("content/blog/nested/post.md", ["content/blog/*.md"]), false);
   assert.equal(matchesAny("content/learn/nested/post.md", ["content/learn/**/*.md"]), true);
+});
+
+test("concrete SvelteKit route paths remain literal while wildcards are rejected", () => {
+  assert.equal(
+    validatePortableRelativePath("src/routes/blog/[slug]/+page.server.ts"),
+    "src/routes/blog/[slug]/+page.server.ts",
+  );
+  assert.throws(() => validatePortableRelativePath("src/routes/blog/*/+page.server.ts"), /glob syntax/);
+  assert.throws(() => validatePortableRelativePath("src/routes/blog/?/+page.server.ts"), /glob syntax/);
 });
 
 test("manifest validation rejects source identity drift", () => {

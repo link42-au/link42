@@ -10,6 +10,8 @@ Actual imports and adaptations are recorded in [source-receipts.json](source-rec
 
 The Learn corpus receipt batch covers the schema README and all 14 canonical Markdown inputs as byte-identical `verbatim` files. The generator, Learn layout, overview, and source tests are recorded as `adapted-input` because the public repository adds fail-closed route and URL validation, public-only integration, accessibility, and destination formatting. The 14 route components are intentionally absent from receipts because they are regenerated outputs, not copied source.
 
+The Blog receipt batch covers the sole pinned Markdown article as a byte-identical `verbatim` file. The parser, server loads, Blog index, article route, RSS handler, homepage integration, and source tests are recorded as `adapted-input` because the public repository strengthens metadata and URL validation, fails closed on unsupported corpus entries, preserves the clean public homepage, and adds destination accessibility coverage. Browser tests are clean destination-authored verification and therefore have no private-source receipt.
+
 Before importing a batch, pass every proposed source-relative path to:
 
 ```sh
