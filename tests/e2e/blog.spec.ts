@@ -39,7 +39,7 @@ test("RSS is validly served and unknown article slugs are 404", async ({ request
 
   const feed = await request.get("/blog/rss.xml");
   expect(feed.status()).toBe(200);
-  expect(feed.headers()["content-type"]).toBe("application/rss+xml; charset=utf-8");
+  expect(feed.headers()["content-type"]).toMatch(/^(?:application\/(?:rss\+xml|xml)|text\/xml)(?:;|$)/);
   const xml = await feed.text();
   expect(xml).toMatch(/^<\?xml version="1\.0" encoding="UTF-8"\?>/);
   expect(xml).toContain(`https://link42.app/blog/${articleSlug}`);

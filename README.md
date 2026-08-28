@@ -2,7 +2,7 @@
 
 This repository is the independent, public source for the Link42 company website at [link42.app](https://link42.app). The website is being separated from Link42's private platform monorepo so that its public source, content provenance, licensing boundaries, and release history can be reviewed without exposing private services or operational configuration.
 
-The repository contains the public-only website shell and the publication safeguards used to keep it independent of the private platform. Content is being added in small, tested features recorded in [PLAN.md](PLAN.md). Until the public release and production cutover gates are complete, this repository is source-in-progress rather than the canonical production deployment.
+The repository contains the public-only website shell and the publication safeguards used to keep it independent of the private platform. Work is recorded in small, tested features in [PLAN.md](PLAN.md). The repository is public and produces a GitHub Pages-compatible artifact, but it is not the canonical production deployment until the separately controlled Pages, custom-domain, DNS, and live-verification gates are complete.
 
 ## Development
 
@@ -28,9 +28,19 @@ history for secrets, formatting, types, unit tests, the production build, every
 included and excluded route, internal links, desktop/mobile accessibility in
 light and dark themes, and high-severity production dependency advisories.
 
-Route and internal-link verification starts the built website only on loopback.
-It validates external HTTPS link syntax but deliberately does not fetch external
+Route and internal-link verification inspects the static `build/` artifact
+directly. Browser and accessibility checks serve that artifact only on loopback.
+They validate external HTTPS link syntax but deliberately do not fetch external
 URLs. CI uses the same command with read-only repository access and no secrets.
+
+## GitHub Pages artifact
+
+`pnpm build` writes the complete domain-root site to `build/`. The pinned Pages
+workflow builds and verifies that directory on protected `main` pushes or an
+explicit manual run, then grants only its deploy job Pages and OIDC write access.
+The source intentionally contains no `CNAME`; Pages enablement, the `link42.app`
+custom-domain setting, `www.link42.app` redirect DNS, and production verification
+are separate operational steps.
 
 The source manifest is pinned to a single private-source commit. A path not explicitly listed in that manifest is rejected by default. See [provenance/SOURCE_PROVENANCE.md](provenance/SOURCE_PROVENANCE.md) before importing any material.
 

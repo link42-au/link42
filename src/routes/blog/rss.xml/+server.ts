@@ -1,6 +1,9 @@
 import { loadBlogArticles, renderBlogRss } from "../../../lib/server/blog";
 import type { RequestHandler } from "./$types";
 
+export const prerender = true;
+export const trailingSlash = "never";
+
 export const GET: RequestHandler = async () =>
   new Response(renderBlogRss(await loadBlogArticles()), {
     headers: {

@@ -2,6 +2,7 @@
   "schemaVersion": 2,
   "allowedPaths": [
     ".github/workflows/ci.yml",
+    ".github/workflows/pages.yml",
     ".gitignore",
     ".node-version",
     ".npmrc",
@@ -57,6 +58,7 @@
     "src/lib/theme.ts",
     "src/routes/+error.svelte",
     "src/routes/+layout.svelte",
+    "src/routes/+layout.ts",
     "src/routes/+page.server.ts",
     "src/routes/+page.svelte",
     "src/routes/about/+page.svelte",
@@ -83,6 +85,7 @@
     "src/routes/learn/vulnerability/cvss/+page.svelte",
     "src/routes/learn/vulnerability/epss/+page.svelte",
     "src/routes/licence/+page.svelte",
+    "static/.nojekyll",
     "static/favicon.svg",
     "static/fonts/Geist-Variable.woff2",
     "static/fonts/GeistMono-Variable.woff2",
@@ -100,10 +103,12 @@
     "tests/e2e/support.ts",
     "tests/gitleaks.test.mjs",
     "tests/import-receipts.test.mjs",
+    "tests/pages-workflow.test.mjs",
     "tests/public-safety.test.mjs",
     "tests/route-links.test.mjs",
     "tests/shell-boundary.test.mjs",
     "tests/source-manifest.test.mjs",
+    "tests/static-pages.test.mjs",
     "tests/theme.test.ts",
     "tsconfig.json",
     "vite.config.ts"
@@ -136,7 +141,7 @@
     ".yaml",
     ".yml"
   ],
-  "textPaths": [".gitignore", ".node-version", ".npmrc", "LICENSE"],
+  "textPaths": [".gitignore", ".node-version", ".npmrc", "LICENSE", "static/.nojekyll"],
   "maxTextBytes": 1000000,
   "binaryFiles": {
     "static/fonts/Geist-Variable.woff2": "2ffebe993e969069a9789d15164b7715d42491b5835516c5e3b935d5f81b05f1",

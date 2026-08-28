@@ -69,13 +69,19 @@ const nav = [
 ];
 
 // biome-ignore lint/correctness/noUnusedVariables: used in Svelte template
+function normalisePath(path: string) {
+  return path === "/" ? path : path.replace(/\/$/u, "");
+}
+
+// biome-ignore lint/correctness/noUnusedVariables: used in Svelte template
 function isActive(href: string) {
-  return page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
+  const path = normalisePath(page.url.pathname);
+  return path === href || path.startsWith(`${href}/`);
 }
 
 // biome-ignore lint/correctness/noUnusedVariables: used in Svelte template
 let breadcrumbs = $derived.by(() => {
-  const path = page.url.pathname;
+  const path = normalisePath(page.url.pathname);
   if (path === "/learn") return [{ title: "Learn", href: "/learn" }];
 
   const segments = path.split("/").filter(Boolean);
@@ -125,7 +131,7 @@ let breadcrumbs = $derived.by(() => {
 		<nav class="learn-nav" aria-label="Learn topics">
 			{#snippet navItem(item: any, level = 0)}
 				{@const active = isActive(item.href)}
-				{@const exact = page.url.pathname === item.href}
+				{@const exact = normalisePath(page.url.pathname) === item.href}
 				<div class="learn-nav-item-wrapper">
 					<a
 						href={item.href}
