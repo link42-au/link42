@@ -28,7 +28,7 @@ test("shell is responsive, local-only and accessible", async ({ page }, testInfo
   const more = page.getByRole("button", { name: "more" });
   await more.click();
   await expect(more).toHaveAttribute("aria-expanded", "true");
-  for (const label of ["Learn", "About", "Blog", "Changelog", "Licence"]) {
+  for (const label of ["Learn", "About", "Blog", "Changelog", "Open source", "Licence"]) {
     await expect(page.locator("#platform-more").getByRole("link", { name: label })).toBeVisible();
   }
   await page.keyboard.press("Escape");
@@ -37,6 +37,13 @@ test("shell is responsive, local-only and accessible", async ({ page }, testInfo
   await page.goto("/about");
   await expect(page.getByRole("navigation", { name: "Site navigation" })).toBeVisible();
   await expect(page.getByRole("link", { name: "About", exact: true }).last()).toHaveClass(/active/);
+
+  await page.goto("/open-source");
+  await expect(page.getByRole("link", { name: "Open source", exact: true }).last()).toHaveClass(/active/);
+  await expect(page.getByRole("contentinfo").getByRole("link", { name: "open source" })).toHaveAttribute(
+    "href",
+    "/open-source",
+  );
 
   const accessibility = await new AxeBuilder({ page }).analyze();
   expect(accessibility.violations).toEqual([]);

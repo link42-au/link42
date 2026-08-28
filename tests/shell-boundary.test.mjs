@@ -8,7 +8,7 @@ const read = (relativePath) => fs.readFile(path.join(root, relativePath), "utf8"
 
 test("public shell exposes only approved navigation", async () => {
   const header = await read("src/lib/components/SiteHeader.svelte");
-  for (const route of ["/learn", "/blog", "/changelog", "/about", "/licence"]) {
+  for (const route of ["/learn", "/blog", "/changelog", "/about", "/open-source", "/licence"]) {
     assert.match(header, new RegExp(`href: \\"${route}\\"`));
   }
   assert.match(header, /https:\/\/rule1\.link42\.app/);
@@ -25,6 +25,7 @@ test("footer preserves the original public platform attribution", async () => {
   assert.match(footer, /Canberra, Australia/);
   assert.match(footer, /<strong>link42<\/strong>/);
   assert.match(footer, /https:\/\/rule1\.link42\.app/);
+  assert.match(footer, /href="\/open-source"/);
   assert.doesNotMatch(footer, /login2|threat10|patch8|peer6/i);
 });
 

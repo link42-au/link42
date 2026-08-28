@@ -38,6 +38,14 @@ const pageDefinitions = [
     canonical: "https://link42.app/licence",
     heading: "Licence",
   },
+  {
+    file: "src/routes/open-source/+page.svelte",
+    title: "Open source — link42",
+    description:
+      "Where Link42 code is hosted, how the public sites are built, and where to report bugs, suggest improvements, or disclose security vulnerabilities.",
+    canonical: "https://link42.app/open-source",
+    heading: "Open source",
+  },
 ];
 
 const read = (relativePath) => fs.readFile(path.join(root, relativePath), "utf8");
@@ -83,6 +91,31 @@ test("company pages do not expose excluded executable private surfaces", async (
   ]) {
     assert.doesNotMatch(combined, denied);
   }
+});
+
+test("open-source page documents hosting, technology, and precise feedback routes", async () => {
+  const source = await read("src/routes/open-source/+page.svelte");
+
+  for (const required of [
+    "link42-au organisation on GitHub",
+    "GitHub Actions to GitHub Pages",
+    "TypeScript and SvelteKit with the static adapter",
+    "Playwright and Axe",
+    "Locally vendored Geist fonts",
+    "SQLite WASM and OPFS",
+    "Python for framework ingestion",
+    "Deterministic GitHub Actions database builds",
+    "https://github.com/link42-au/link42/issues/new?template=bug_report.yml",
+    "https://github.com/link42-au/link42/issues/new?template=feature_request.yml",
+    "https://github.com/link42-au/rule1/issues/new?template=bug_report.yml",
+    "https://github.com/link42-au/rule1/issues/new?template=feature_request.yml",
+    "https://github.com/link42-au/link42/security/advisories/new",
+    "https://github.com/link42-au/rule1/security/advisories/new",
+  ]) {
+    assert.ok(source.includes(required), required);
+  }
+
+  assert.match(source, /do not disclose a vulnerability in a public issue/i);
 });
 
 test("homepage keeps the migrated public information architecture", async () => {

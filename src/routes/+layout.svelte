@@ -17,6 +17,7 @@ let { children } = $props();
         <a href="/blog" class:active={page.url.pathname.startsWith("/blog")}>Blog</a>
         <a href="/changelog" class:active={page.url.pathname.startsWith("/changelog")}>Changelog</a>
         <a href="/about" class:active={page.url.pathname.startsWith("/about")}>About</a>
+        <a href="/open-source" class:active={page.url.pathname.startsWith("/open-source")}>Open source</a>
       </div>
     </nav>
   {/if}

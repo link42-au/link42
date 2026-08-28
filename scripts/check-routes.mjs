@@ -12,6 +12,7 @@ export const HTML_ROUTES = [
   "/about",
   "/changelog",
   "/licence",
+  "/open-source",
   "/learn",
   "/learn/frameworks",
   "/learn/frameworks/ism",

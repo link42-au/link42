@@ -1,6 +1,9 @@
 {
   "schemaVersion": 2,
   "allowedPaths": [
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
     ".github/workflows/ci.yml",
     ".github/workflows/pages.yml",
     ".gitignore",
@@ -85,6 +88,7 @@
     "src/routes/learn/vulnerability/cvss/+page.svelte",
     "src/routes/learn/vulnerability/epss/+page.svelte",
     "src/routes/licence/+page.svelte",
+    "src/routes/open-source/+page.svelte",
     "static/.nojekyll",
     "static/favicon.svg",
     "static/fonts/Geist-Variable.woff2",
@@ -103,6 +107,7 @@
     "tests/e2e/support.ts",
     "tests/gitleaks.test.mjs",
     "tests/import-receipts.test.mjs",
+    "tests/issue-templates.test.mjs",
     "tests/pages-workflow.test.mjs",
     "tests/public-safety.test.mjs",
     "tests/route-links.test.mjs",

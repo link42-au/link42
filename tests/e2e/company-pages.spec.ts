@@ -30,6 +30,13 @@ const companyPages = [
     description:
       "Licensing for the link42 website software, original editorial content, brand assets, and third-party material.",
   },
+  {
+    route: "/open-source",
+    heading: "Open source",
+    title: "Open source — link42",
+    description:
+      "Where Link42 code is hosted, how the public sites are built, and where to report bugs, suggest improvements, or disclose security vulnerabilities.",
+  },
 ] as const;
 
 for (const companyPage of companyPages) {
@@ -98,5 +105,23 @@ test("excluded route families return 404", async ({ request }, testInfo) => {
   ]) {
     const response = await request.get(route);
     expect(response.status(), route).toBe(404);
+  }
+});
+
+test("open-source page exposes the four public feedback routes and private security routes", async ({
+  page,
+}, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop-light", "feedback route inventory runs once on desktop");
+
+  await page.goto("/open-source");
+  for (const href of [
+    "https://github.com/link42-au/link42/issues/new?template=bug_report.yml",
+    "https://github.com/link42-au/link42/issues/new?template=feature_request.yml",
+    "https://github.com/link42-au/rule1/issues/new?template=bug_report.yml",
+    "https://github.com/link42-au/rule1/issues/new?template=feature_request.yml",
+    "https://github.com/link42-au/link42/security/advisories/new",
+    "https://github.com/link42-au/rule1/security/advisories/new",
+  ]) {
+    await expect(page.locator(`a[href="${href}"]`)).toBeVisible();
   }
 });
