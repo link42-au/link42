@@ -3,7 +3,7 @@
 Status: Complete
 Source baseline: `wan0net/link42@aaa140cdd753d6576f0a2bf3292b31518b88fbcc`
 Destination: `link42-au/link42`
-Repository visibility: Private
+Repository visibility: Public
 
 ## Project Info
 
@@ -118,6 +118,7 @@ All package manifests, lockfiles, configuration, documentation, licences, CI, an
 | 4 | Blog and RSS | Import strict Markdown parsing, article routes, homepage latest-article integration, and RSS with safe rendering and deterministic ordering. | 2 | done |
 | 5 | Public company pages | Port home, about, changelog, and licence after editorial and public-safety review; remove or neutralise links to excluded API, reports, and investigations routes and publish the selected licensing policy accurately. | 3, 4 | done |
 | 6 | Verification and private CI | Add one-command verification, route and link tests, Playwright and Axe checks, secret and privacy scans, dependency audit, deterministic generation checks, and hosted CI in the private repository. | 3, 4, 5 | done |
+| 7 | Public release | Publish the independent repository only after private hosted CI succeeds; configure public default-branch protections and security features; verify a credential-free fresh clone, full history, tree, receipts, routes, browsers, accessibility, and final public hosted CI. Hosting and production remain excluded. | 6 | done |
 
 One completed feature equals one tested commit and push. Do not start the next feature with uncommitted work.
 
@@ -153,7 +154,7 @@ pnpm verify
 ## Repository Boundary
 
 - The private monorepo remains in place and private.
-- The new website repository also remains private unless the user separately approves publication.
+- The website repository is public after completing Feature 7's explicit publication gates.
 - No public deployment specification, credential, private app identifier, or DNS mutation script is copied.
 - Hosting, DNS, staging, and production cutover are explicitly excluded from this plan.
 - Keep website links pointed at the durable `https://rule1.link42.app` product URL, not either GitHub Pages owner URL.
